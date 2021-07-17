@@ -6,4 +6,7 @@ set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_C_FLAGS "-Wall -Wextra -pedantic -O0 -std=c99")
 # set(CMAKE_C_FLAGS "-Wall -Wextra -pedantic -O2 -std=c99")
 
-add_executable(ce ceshi.c)
+add_executable(_02_01_ _02_01_.c)
+add_executable(_02_02_ _02_02_.c)
+add_executable(_02_03_ _02_03_.c)
+add_executable(_02_04_ _02_04_.c)
