@@ -16,3 +16,5 @@ add_executable(_02_07_ _02_07_.c)
 add_executable(_02_08_ _02_08_.c)
 
 add_executable(_03_01_ _03_01_.c)
+add_executable(_03_02_ _03_02_.c)
+add_executable(_03_03_ _03_03_.c)
