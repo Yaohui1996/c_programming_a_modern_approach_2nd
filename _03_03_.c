@@ -26,6 +26,5 @@ int main() {
   printf("Publisher code: %u\n", p_c);
   printf("Item number: %u\n", i_n);
   printf("Check digit: %u\n", c_d);
-
   return 0;
 }
