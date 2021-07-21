@@ -30,6 +30,7 @@ int main(){
   int min,sec;
   printf("Enter a 24-hour time: ");
   scanf("%d:%d",min,sec);
+  // TODO
 
   
   printf("Close departure time is 【】, arriving at 【】");
