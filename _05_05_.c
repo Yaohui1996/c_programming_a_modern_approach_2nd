@@ -4,7 +4,8 @@
 #include <stdio.h>
 
 int main() {
-  float income, tax;
+  float income = 0.0f;
+  float tax = 0.0f;
   printf("请输入收入: ");
   scanf("%f", &income);
   if (income <= 750)
