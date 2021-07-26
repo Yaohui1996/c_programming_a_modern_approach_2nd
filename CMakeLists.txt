@@ -70,3 +70,6 @@ add_executable(_07_12_ _07_12_.c)
 add_executable(_07_13_ _07_13_.c)
 add_executable(_07_14_ _07_14_.c)
 add_executable(_07_15_ _07_15_.c)
+
+add_executable(_08_01_ _08_01_.c)
+add_executable(_08_02_ _08_02_.c)
