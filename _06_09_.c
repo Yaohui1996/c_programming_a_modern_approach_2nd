@@ -16,7 +16,7 @@ int main() {
   scanf("%f", &payment);
   printf("请输入还贷次数: ");
   scanf("%u", &nums);
-  for (int i = 1; i <= nums; ++i) {
+  for (unsigned int i = 1; i <= nums; ++i) {
     loan = loan - payment + loan * (rate / 100.0f / 12.0f);
     printf("Balance remaining after %d payment: $%.2f\n", i, loan);
   }

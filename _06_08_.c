@@ -13,7 +13,7 @@ int main() {
   scanf("%u", &number_of_days);
   printf("Enter starting day of the week(1 = Sun,7 = Sat) : ");
   scanf("%u", &starting_day);
-  int t = 1;
+  unsigned int t = 1;
   for (unsigned int i = 0; i <= number_of_days; ++i) {
     if (t < starting_day) {
       printf("   ");
