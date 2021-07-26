@@ -33,7 +33,6 @@ int main(void) {
     }
     if (month % 12 == 0) {
       printf("\n");
-      
     }
   }
   return 0;
