@@ -26,7 +26,7 @@ int main(void) {
       printf("%3d ", month / 12);
     }
     for (i = 0; i < NUM_RATES; i++) {
-      value[i] += (low_rate + i) / 100.0 * value[i];
+      value[i] += (low_rate + i) / 100.0 / 12.0 * value[i];
       if (month % 12 == 0) {
         printf("%7.2f", value[i]);
       }
