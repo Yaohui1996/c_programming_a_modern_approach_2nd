@@ -17,12 +17,13 @@ int main(void) {
     digit_seen[digit] += 1;
     n /= 10;
   }
-
-  printf("Repeated digit(s): ");
+  printf("Digit: ");
   for (size_t i = 0; i < 10; ++i) {
-    if (digit_seen[i] > 1) {
-      printf("%lu ", i);
-    }
+    printf("%zu ", i);
+  }
+  printf("\nOccurrences: ");
+  for (size_t i = 0; i < 10; ++i) {
+    printf("%u ", digit_seen[i]);
   }
   printf("\n");
   return 0;
