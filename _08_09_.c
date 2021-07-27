@@ -14,6 +14,7 @@
 
 // 因为Y的4个方向都堵住了，所以没有地方可以放置下一步的Z了。
 
+#include <math.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -22,7 +23,6 @@
 
 #define M 10
 #define N 10
-#define PI 3.1415926535898
 
 int main() {
   // 初始化矩阵
@@ -54,7 +54,7 @@ int main() {
     srand((unsigned)time(NULL));
     random_int = rand() % 4;
     while (true) {
-      sleep(PI);
+      sleep(exp(1.0));
       if (left == true && random_int == 0) break;
       if (down == true && random_int == 1) break;
       if (right == true && random_int == 2) break;

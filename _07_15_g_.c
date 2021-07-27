@@ -16,12 +16,12 @@ int main() {
   // (g)
   printf("Enter a positive integer: ");
   long double n;
-  scanf("%lf", &n);
+  scanf("%Lf", &n);
   long double result = 1;
   for (long double i = 1; i <= n; ++i) {
     result *= i;
   }
-  printf("%f的阶乘为: %f\n", n, result);
+  printf("%Lf的阶乘为: %Lf\n", n, result);
   // n_max = 170
   return 0;
 }

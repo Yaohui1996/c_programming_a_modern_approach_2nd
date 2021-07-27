@@ -9,7 +9,7 @@
 #define INITIAL_BALANCE 100.00
 
 int main(void) {
-  int i, low_rate, num_years, year;
+  int i, low_rate, num_years;
   double value[5];
   printf("Enter interest rate: ");
   scanf("%d", &low_rate);
