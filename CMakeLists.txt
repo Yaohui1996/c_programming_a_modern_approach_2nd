@@ -94,3 +94,14 @@ add_executable(_08_14_ _08_14_.c)
 add_executable(_08_15_ _08_15_.c)
 add_executable(_08_16_ _08_16_.c)
 add_executable(_08_17_ _08_17_.c)
+
+add_executable(_09_01_ _09_01_.c)
+add_executable(_09_02_ _09_02_.c)
+add_executable(_09_03_ _09_03_.c)
+add_executable(_09_04_ _09_04_.c)
+add_executable(_09_05_ _09_05_.c)
+add_executable(_09_06_ _09_06_.c)
+add_executable(_09_07_ _09_07_.c)
+add_executable(_09_08_ _09_08_.c)
+
+
