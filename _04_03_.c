@@ -14,4 +14,4 @@ int main() {
   printf("The reversal is: %d%d%d\n", a, b, c);
   return 0;
   return 0;
-  }
+}

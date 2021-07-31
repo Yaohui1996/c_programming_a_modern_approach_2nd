@@ -15,8 +15,8 @@ int main() {
   printf("Enter message: ");
   printf("In B1FF-speak: ");
   char ch;
-  ch = getchar();
-  ch = toupper(ch);
+  ch = (char)getchar();
+  ch = (char)toupper(ch);
 
   while (ch != '\n') {
     if (ch == 'A') {
@@ -34,9 +34,9 @@ int main() {
     } else {
       printf("%c", ch);
     }
-    ch = getchar();
+    ch = (char)getchar();
 
-    ch = toupper(ch);
+    ch = (char)toupper(ch);
   }
   printf("!!!!!!!!!!\n");
   return 0;

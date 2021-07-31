@@ -8,10 +8,10 @@
 
 int main() {
   unsigned int x;
-  printf("Enter a number:");
+  printf("Enter a number x (x>=0):");
   scanf("%u", &x);
   unsigned int digits;
-  if (x >= 0 && x <= 9) {
+  if (x <= 9) {
     digits = 1;
   } else if (x >= 10 && x <= 99) {
     digits = 2;

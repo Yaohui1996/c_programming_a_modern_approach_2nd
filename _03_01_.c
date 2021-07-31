@@ -8,7 +8,7 @@ int main() {
   unsigned int month;
   unsigned int year;
   printf("Enter a date (mm/dd/yy): ");
-  scanf("%2d/%2d/%4d", &month, &day, &year);
+  scanf("%2u/%2u/%4u", &month, &day, &year);
   if (month < 10 && day < 10) {
     printf("You entered the date %d0%d0%d\n", year, month, day);
   } else if (month < 10 && day >= 10) {

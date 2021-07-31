@@ -11,14 +11,13 @@
 #include <stdio.h>
 
 int main() {
-  int grade, shi, ge;
+  int grade, shi;
   printf("Enter numerical grade: ");
   scanf("%d", &grade);
   if (grade < 0 || grade > 100) {
     printf("错误！！！，成绩不可低于0分或高于100分！！！");
   }
   shi = grade / 10;
-  ge = grade % 10;
   switch (shi) {
   case 0:
     printf("Letter grade: F\n");

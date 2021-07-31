@@ -28,9 +28,7 @@ int main() {
           month = month_input;
           day = day_input;
         } else {
-          if (day < day_input) {
-            continue;
-          } else if (day > day_input) {
+          if (day > day_input) {
             year = year_input;
             month = month_input;
             day = day_input;

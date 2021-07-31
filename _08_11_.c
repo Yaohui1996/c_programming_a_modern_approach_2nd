@@ -21,8 +21,8 @@ int main() {
   char ch;
   printf("Enter phone number: ");
   size_t i = 0;
-  while ((ch = getchar()) != '\n') {
-    ch = toupper(ch);
+  while ((ch = (char)getchar()) != '\n') {
+    ch = (char)toupper(ch);
     if (ch >= 65 && ch <= 90) {
       if (ch == 'A' || ch == 'B' || ch == 'C') {
         phone_number[i] = '2';

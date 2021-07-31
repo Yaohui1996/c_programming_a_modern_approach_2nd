@@ -3,18 +3,18 @@
 #include <stdio.h>
 
 int main() {
-  float e = 2, eps;
+  double e = 2, eps;
   printf("请输入eps: ");
-  scanf("%f", &eps);
-  float temp = 1;
+  scanf("%lf", &eps);
+  double temp = 1;
   unsigned i = 2;
 
   while (temp > eps) {
-    unsigned int factor = 1.0;
+    unsigned int factor = 1;
     for (unsigned j = 1; j <= i; ++j) {
       factor *= j;
     }
-    temp = 1.0 / factor;
+    temp = 1.0 / (double)factor;
     e += temp;
     ++i;
   }

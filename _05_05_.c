@@ -4,10 +4,10 @@
 #include <stdio.h>
 
 int main() {
-  float income = 0.0f;
-  float tax = 0.0f;
+  double income = 0.0;
+  double tax = 0.0;
   printf("请输入收入: ");
-  scanf("%f", &income);
+  scanf("%lf", &income);
   if (income <= 750)
     tax = income * 0.01;
   else if (income > 750 && income <= 2250)

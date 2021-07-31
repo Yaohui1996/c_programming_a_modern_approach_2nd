@@ -11,7 +11,7 @@ int main() {
   unsigned int nums_5 = 0;
   unsigned int nums_1 = 0;
   printf("Enter a dollar amount: ");
-  scanf("%d", &dollars);
+  scanf("%u", &dollars);
   nums_20 = dollars / 20;
   dollars = dollars - 20 * nums_20;
   nums_10 = dollars / 10;

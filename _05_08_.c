@@ -9,23 +9,23 @@
 
 #include <stdio.h>
 
-#define DEPARTURE_TIME_0 480  // 8:00 AM
-#define DEPARTURE_TIME_1 583  // 9:43 AM
-#define DEPARTURE_TIME_2 679  // 11:19 AM
-#define DEPARTURE_TIME_3 767  // 12:47 AM
-#define DEPARTURE_TIME_4 840  // 2:00 PM
-#define DEPARTURE_TIME_5 945  // 3:45 PM
-#define DEPARTURE_TIME_6 1140 // 7:00 PM
-#define DEPARTURE_TIME_7 1305 // 9:45 PM
+#define DEPARTURE_TIME_0 480   // 8:00 AM
+#define DEPARTURE_TIME_1 583   // 9:43 AM
+#define DEPARTURE_TIME_2 679   // 11:19 AM
+#define DEPARTURE_TIME_3 767   // 12:47 AM
+#define DEPARTURE_TIME_4 840   // 2:00 PM
+#define DEPARTURE_TIME_5 945   // 3:45 PM
+#define DEPARTURE_TIME_6 1140  // 7:00 PM
+#define DEPARTURE_TIME_7 1305  // 9:45 PM
 
-#define ARRIVE_TIME_0 616  // 10:16 AM
-#define ARRIVE_TIME_1 712  // 11:52 AM
-#define ARRIVE_TIME_2 811  // 1:31 PM
-#define ARRIVE_TIME_3 900  // 3:00 PM
-#define ARRIVE_TIME_4 968  // 4:08 PM
-#define ARRIVE_TIME_5 1075 // 5:55 PM
-#define ARRIVE_TIME_6 1280 // 9:20 PM
-#define ARRIVE_TIME_7 1438 // 11:58 PM
+#define ARRIVE_TIME_0 616   // 10:16 AM
+#define ARRIVE_TIME_1 712   // 11:52 AM
+#define ARRIVE_TIME_2 811   // 1:31 PM
+#define ARRIVE_TIME_3 900   // 3:00 PM
+#define ARRIVE_TIME_4 968   // 4:08 PM
+#define ARRIVE_TIME_5 1075  // 5:55 PM
+#define ARRIVE_TIME_6 1280  // 9:20 PM
+#define ARRIVE_TIME_7 1438  // 11:58 PM
 
 int main() {
   int hour, min;
@@ -96,23 +96,26 @@ int main() {
   int depature_min = (input_time + min_minus) % 60;
 
   if (depature_hour > 12 && arrive_hour > 12)
-    printf("Close departure time is %1d%1d:%1d%1d p.m., arriving at "
-           "%1d%1d:%1d%1d "
-           "p.m.\n",
-           (depature_hour - 12) / 10, (depature_hour - 12) % 10,
-           depature_min / 10, depature_min % 10, (arrive_hour - 12) / 10,
-           (arrive_hour - 12) % 10, arrive_min / 10, arrive_min % 10);
+    printf(
+        "Close departure time is %1d%1d:%1d%1d p.m., arriving at "
+        "%1d%1d:%1d%1d "
+        "p.m.\n",
+        (depature_hour - 12) / 10, (depature_hour - 12) % 10, depature_min / 10,
+        depature_min % 10, (arrive_hour - 12) / 10, (arrive_hour - 12) % 10,
+        arrive_min / 10, arrive_min % 10);
   if (depature_hour <= 12 && arrive_hour > 12)
-    printf("Close departure time is %1d%1d:%1d%1d a.m., arriving at "
-           "%1d%1d:%1d%1d p.m.\n",
-           depature_hour / 10, depature_hour % 10, depature_min / 10,
-           depature_min % 10, (arrive_hour - 12) / 10, (arrive_hour - 12) % 10,
-           arrive_min / 10, arrive_min % 10);
+    printf(
+        "Close departure time is %1d%1d:%1d%1d a.m., arriving at "
+        "%1d%1d:%1d%1d p.m.\n",
+        depature_hour / 10, depature_hour % 10, depature_min / 10,
+        depature_min % 10, (arrive_hour - 12) / 10, (arrive_hour - 12) % 10,
+        arrive_min / 10, arrive_min % 10);
   if (depature_hour <= 12 && arrive_hour <= 12)
-    printf("Close departure time is %1d%1d:%1d%1d a.m., arriving at "
-           "%1d%1d:%1d%1d a.m.\n",
-           depature_hour / 10, depature_hour % 10, depature_min / 10,
-           depature_min % 10, arrive_hour / 10, arrive_hour % 10,
-           arrive_min / 10, arrive_min % 10);
+    printf(
+        "Close departure time is %1d%1d:%1d%1d a.m., arriving at "
+        "%1d%1d:%1d%1d a.m.\n",
+        depature_hour / 10, depature_hour % 10, depature_min / 10,
+        depature_min % 10, arrive_hour / 10, arrive_hour % 10, arrive_min / 10,
+        arrive_min % 10);
   return 0;
 }

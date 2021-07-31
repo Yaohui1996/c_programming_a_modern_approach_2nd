@@ -14,7 +14,7 @@ int main() {
   printf("Enter number_of_stock: ");
   scanf("%u", &number_of_stock);
 
-  value = value_of_one_stock * number_of_stock;
+  value = value_of_one_stock * (float)number_of_stock;
 
   if (value < 2500.00f)
     commission = 30.00f + .017f * value;
@@ -33,9 +33,9 @@ int main() {
 
   // 计算竞争对手佣金
   if (number_of_stock < 2000)
-    commission_compt = number_of_stock * 0.03f + 33.0f;
+    commission_compt = (float)number_of_stock * 0.03f + 33.0f;
   else
-    commission_compt = number_of_stock * 0.02f + 33.0f;
+    commission_compt = (float)number_of_stock * 0.02f + 33.0f;
   printf("Commission: $%.2f\n", commission);
   printf("Commission of comp: $%.2f\n", commission_compt);
   return 0;
