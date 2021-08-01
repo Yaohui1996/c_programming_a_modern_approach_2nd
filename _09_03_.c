@@ -59,7 +59,8 @@ int main() {
     if (!(ch < 'Z'))
       break;
     // 生成满足可行方向的随机数
-    srand((unsigned)time(NULL));
+    // srand((unsigned)time(NULL));
+    srand((unsigned)clock());
     random_int = rand() % 4;
     while (true) {
       // sleep(exp(1.0));
@@ -71,7 +72,8 @@ int main() {
         break;
       if (up == true && random_int == 3)
         break;
-      srand((unsigned)time(NULL));
+      // srand((unsigned)time(NULL));
+      srand((unsigned)clock());
       random_int = rand() % 4;
     }
 
@@ -85,7 +87,7 @@ int main() {
     else if (random_int == 3)
       pos_y -= 1;
 
-    matrix[pos_x][pos_y] = ch + 1;
+    matrix[pos_x][pos_y] = (char)((int)ch + 1);
 
     // 更新可行方向
     if (pos_x > 0 && matrix[pos_x - 1][pos_y] == '.') {

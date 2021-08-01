@@ -22,8 +22,8 @@ int main() {
   char ch;
   uint64_t scrabble_value = 0;
   printf("Enter a word:: ");
-  while ((ch = (char)getchar()) != '\n') {
-    ch = (char)toupper(ch);
+  while ((ch = getchar()) != '\n') {
+    ch = toupper(ch);
     if (ch >= 65 && ch <= 90) scrabble_value += arr[ch - 65];
   }
   printf("Scrabble value: %llu\n", scrabble_value);

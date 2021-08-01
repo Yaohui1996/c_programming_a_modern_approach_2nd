@@ -104,4 +104,10 @@ add_executable(_09_06_ _09_06_.c)
 add_executable(_09_07_ _09_07_.c)
 add_executable(_09_08_ _09_08_.c)
 
-
+add_executable(_10_01_ _10_01_.c)
+add_executable(_10_02_ _10_02_.c)
+add_executable(_10_03_ _10_03_.c)
+add_executable(_10_04_ _10_04_.c)
+add_executable(_10_05_ _10_05_.c)
+add_executable(_10_06_ _10_06_.c)
+add_executable(_10_07_ _10_07_.c)

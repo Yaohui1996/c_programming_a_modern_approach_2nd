@@ -21,25 +21,25 @@ int main() {
   int arr[26] = {0};
   printf("Enter first word: ");
   char ch;
-  ch = (char)getchar();
-  ch = (char)toupper(ch);
+  ch = getchar();
+  ch = toupper(ch);
   while (ch != '\n') {
     if (isalpha(ch)) {
       ++arr[ch - 65];
     }
-    ch = (char)getchar();
-    ch = (char)toupper(ch);
+    ch = getchar();
+    ch = toupper(ch);
   }
 
   printf("Enter second word: ");
-  ch = (char)getchar();
-  ch = (char)toupper(ch);
+  ch = getchar();
+  ch = toupper(ch);
   while (ch != '\n') {
     if (isalpha(ch)) {
       --arr[ch - 65];
     }
-    ch = (char)getchar();
-    ch = (char)toupper(ch);
+    ch = getchar();
+    ch = toupper(ch);
   }
 
   int flag = 0;

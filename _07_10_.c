@@ -12,7 +12,7 @@ int main() {
 
   char ch;
   while ((ch = getchar()) != '\n') {
-    ch = tolower(ch);
+    ch = tolower((int)ch);
     if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
       ++nums;
     }

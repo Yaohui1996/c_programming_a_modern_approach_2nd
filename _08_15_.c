@@ -22,11 +22,11 @@
 int main() {
   printf("Enter message to be encrypted: ");
   char str[100];
-  char ch = (char)getchar();
+  char ch = getchar();
   size_t i = 0;
   while (ch != '\n') {
     str[i] = ch;
-    ch = (char)getchar();
+    ch = getchar();
     ++i;
   }
   str[i] = '\n';

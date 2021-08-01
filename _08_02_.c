@@ -8,7 +8,7 @@
 #include <stdio.h>
 int main(void) {
   unsigned int digit_seen[10] = {0};
-  int digit;
+  long digit;
   long n;
   printf("Enter a number: ");
   scanf("%ld", &n);

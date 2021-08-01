@@ -10,7 +10,7 @@ int main(void) {
   scanf("%ld", &n);
   while (n > 0) {
     bool digit_seen[10] = {false};
-    int digit;
+    long digit;
     while (n > 0) {
       digit = n % 10;
       if (digit_seen[digit]) break;

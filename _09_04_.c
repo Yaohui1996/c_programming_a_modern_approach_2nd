@@ -51,14 +51,14 @@ int main() {
 
 void read_word(int counts[26]) {
   char ch;
-  ch = (char)getchar();
-  ch = (char)toupper(ch);
+  ch = getchar();
+  ch = toupper(ch);
   while (ch != '\n') {
     if (isalpha(ch)) {
       ++counts[ch - 65];
     }
-    ch = (char)getchar();
-    ch = (char)toupper(ch);
+    ch = getchar();
+    ch = toupper(ch);
   }
 }
 bool equal_array(int counts1[26], int counts2[26]) {

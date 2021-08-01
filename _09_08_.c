@@ -53,13 +53,13 @@ int main() {
     ++win_nums;
     printf("You win!\n");
     printf("Play again?\n");
-    ch = (char)getchar();
+    ch = getchar();
     getchar();
   } else {
     ++lose_nums;
     printf("You lose!\n");
     printf("Play again?\n");
-    ch = (char)getchar();
+    ch = getchar();
     getchar();
   }
   while (ch != 'n') {
@@ -67,13 +67,13 @@ int main() {
       ++win_nums;
       printf("You win!\n");
       printf("Play again?\n");
-      ch = (char)getchar();
+      ch = getchar();
       getchar();
     } else {
       ++lose_nums;
       printf("You lose!\n");
       printf("Play again?\n");
-      ch = (char)getchar();
+      ch = getchar();
       getchar();
     }
   }
@@ -84,11 +84,15 @@ int main() {
 int roll_dice(void) {
   int num_1;
   int num_2;
-  srand((unsigned)time(NULL));
+  int sum;
+  srand((unsigned)clock());
+  // srand((unsigned)time(NULL));
   num_1 = rand() % 6 + 1;
-  srand((unsigned)time(NULL));
+  srand((unsigned)clock());
   num_2 = rand() % 6 + 1;
-  return num_1 + num_2;
+  sum = num_1 + num_2;
+  printf("You rolled: %d\n", sum);
+  return sum;
 }
 bool play_game(void) {
   // 第一次
