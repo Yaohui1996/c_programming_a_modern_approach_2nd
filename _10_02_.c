@@ -47,7 +47,7 @@ void read_cards(void) {
   for (suit = 0; suit < NUM_SUITS; suit++)
     num_in_suit[suit] = 0;
   while (cards_read < NUM_CARDS) {
-    bad_card = false;
+    bad_card = true;
     printf("Enter a card: ");
     rank_ch = getchar();
     switch (rank_ch) {
