@@ -1,7 +1,7 @@
 // 把数组num_in_rank、num_in_suit和card_exists从10.5节的poker.c程序中去掉。
 // 程序改用5×2的数组来存储牌。数组的每一行表示一张牌。
 // 例如，如果数组名为hand，则hand[0][0]存储第一张牌的等级，hand[0][1]存储第一张牌的花色。
-
+// TODO
 /* Classifies a poker hand */
 #include <stdbool.h> /* C99 only */
 #include <stdio.h>

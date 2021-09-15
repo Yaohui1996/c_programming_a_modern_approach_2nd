@@ -1,194 +1,32 @@
-/* Classifies a poker hand */
-#include <stdbool.h> /* C99 only */
+/**
+ **有些计算器（尤其是惠普的计算器）使用逆波兰表示法（Reverse Polish Notation,
+ **RPN）来书写数学表达式。
+ **在这一表示法中，运算符放置在操作数的后面而不是放在操作数中间。
+ **例如，在逆波兰表示法中1+2将表示为1 2 +，而1+2*3将表示为1 2 3 * +。
+ **逆波兰表达式可以很方便地用栈求值。
+ **算法从左向右读取运算符和操作数，并执行下列步骤。
+ **(1) 当遇到操作数时，将其压入栈中。
+ **(2) 当遇到运算符时，从栈中弹出它的操作数，执行运算并把结果压入栈中。
+ **编写程序对逆波兰表达式求值。操作数都是个位的整数，运算符为+、-、*、/和=。
+ **遇到运算符=时，将显示栈顶项，随后清空栈并提示用户计算新的表达式。
+ **这一过程持续进行，直到用户输入一个既不是运算符也不是操作数的字符为止：
+ **Enter an RPN expression: 1 2 3 * + =
+ **Value of expression: 7
+ **Enter an RPN expression: 5 8 * 4 9 - / =
+ **Value of expression: -8
+ **Enter an RPN expression: q
+ **如果栈出现上溢，程序将显示消息Expression is too complex并终止。
+ **如果栈出现下溢（例如遇到表达式1 2 + +），程序将显示消息Not enough operands in
+ **expression并终止。 提示：把10.2节的栈代码整合到你的程序中。 使用scanf(" %c",
+ **&ch)读取运算符和操作数。
+ */
+// TODO
+
 #include <stdio.h>
-#include <stdlib.h>
-#define NUM_RANKS 13
-#define NUM_SUITS 4
-#define NUM_CARDS 5
-/* external variables */
-int num_in_rank[NUM_RANKS];
-int num_in_suit[NUM_SUITS];
-bool straight, flush, four, three;
-int pairs; /* can be 0, 1, or 2 */
-/* prototypes */
-void read_cards(void);
-void analyze_hand(void);
-void print_result(void);
-/************************************************************
- * main: Calls read_cards, analyze_hand, and print_result *
- * repeatedly. *
- ************************************************************/
-int main(void) {
-    for (;;) {
-        read_cards();
-        analyze_hand();
-        print_result();
-    }
-}
-/************************************************************
- * read_cards: Reads the cards into the external *
- * variables num_in_rank and num_in_suit; *
- * checks for bad cards and duplicate cards. *
- ***********************************************************/
-void read_cards(void) {
-    bool card_exists[NUM_RANKS][NUM_SUITS];
-    char ch, rank_ch, suit_ch;
-    int rank, suit;
-    bool bad_card;
-    int cards_read = 0;
-    for (rank = 0; rank < NUM_RANKS; rank++) {
-        num_in_rank[rank] = 0;
-        for (suit = 0; suit < NUM_SUITS; suit++)
-            card_exists[rank][suit] = false;
-    }
-    for (suit = 0; suit < NUM_SUITS; suit++) num_in_suit[suit] = 0;
-    while (cards_read < NUM_CARDS) {
-        bad_card = false;
-        printf("Enter a card: ");
-        rank_ch = getchar();
-        switch (rank_ch) {
-            case '0':
-                exit(EXIT_SUCCESS);
-            case '2':
-                rank = 0;
-                break;
-            case '3':
-                rank = 1;
-                break;
-            case '4':
-                rank = 2;
-                break;
-            case '5':
-                rank = 3;
-                break;
-            case '6':
-                rank = 4;
-                break;
-            case '7':
-                rank = 5;
-                break;
-            case '8':
-                rank = 6;
-                break;
-            case '9':
-                rank = 7;
-                break;
-            case 't':
-            case 'T':
-                rank = 8;
-                break;
-            case 'j':
-            case 'J':
-                rank = 9;
-                break;
-            case 'q':
-            case 'Q':
-                rank = 10;
-                break;
-            case 'k':
-            case 'K':
-                rank = 11;
-                break;
-            case 'a':
-            case 'A':
-                rank = 12;
-                break;
-            default:
-                bad_card = true;
-        }
-        suit_ch = getchar();
-        switch (suit_ch) {
-            case 'c':
-            case 'C':
-                suit = 0;
-                break;
-            case 'd':
-            case 'D':
-                suit = 1;
-                break;
-            case 'h':
-            case 'H':
-                suit = 2;
-                break;
-            case 's':
-            case 'S':
-                suit = 3;
-                break;
-            default:
-                bad_card = true;
-        }
-        while ((ch = getchar()) != '\n')
-            if (ch != ' ') bad_card = true;
-        if (bad_card)
-            printf("Bad card; ignored.\n");
-        else if (card_exists[rank][suit])
-            printf("Duplicate card; ignored.\n");
-        else {
-            num_in_rank[rank]++;
-            num_in_suit[suit]++;
-            card_exists[rank][suit] = true;
-            cards_read++;
-        }
-    }
-}
-/************************************************************
- * analyze_hand: Determines whether the hand contains a *
- * straight, a flush, four-of-a-kind, *
- * and/or three-of-a-kind; determines the *
- * number of pairs; stores the results into *
- * the external variables straight, flush, *
- * four, three, and pairs. *
- ************************************************************/
-void analyze_hand(void) {
-    int num_consec = 0;
-    int rank, suit;
-    straight = false;
-    flush = false;
-    four = false;
-    three = false;
-    pairs = 0;
-    /* check for flush */
-    for (suit = 0; suit < NUM_SUITS; suit++)
-        if (num_in_suit[suit] == NUM_CARDS) flush = true;
-    /* check for straight */
-    rank = 0;
-    while (num_in_rank[rank] == 0) rank++;
-    for (; rank < NUM_RANKS && num_in_rank[rank] > 0; rank++) num_consec++;
-    if (num_consec == NUM_CARDS) {
-        straight = true;
-        return;
-    }
-    /* check for 4-of-a-kind, 3-of-a-kind, and pairs */
-    for (rank = 0; rank < NUM_RANKS; rank++) {
-        if (num_in_rank[rank] == 4) four = true;
-        if (num_in_rank[rank] == 3) three = true;
-        if (num_in_rank[rank] == 2) pairs++;
-    }
-}
-/************************************************************
- * print_result: prints the classification of the hand, *
- * based on the values of the external *
- * variables straight, flush, four, three, *
- * and pairs. *
- ***********************************************************/
-void print_result(void) {
-    if (straight && flush)
-        printf("Straight flush");
-    else if (four)
-        printf("Four of a kind");
-    else if (three && pairs == 1)
-        printf("Full house");
-    else if (flush)
-        printf("Flush");
-    else if (straight)
-        printf("Straight");
-    else if (three)
-        printf("Three of a kind");
-    else if (pairs == 2)
-        printf("Two pairs");
-    else if (pairs == 1)
-        printf("Pair");
-    else
-        printf("High card");
-    printf("\n\n");
+
+int main() {
+    printf("1\n");
+    char ch = 65;
+    printf("%d\n", ch);
+    return 0;
 }
