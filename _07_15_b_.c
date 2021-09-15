@@ -13,16 +13,16 @@
 #include <stdio.h>
 
 int main() {
-  // (b)
-  printf("Enter a positive integer: ");
-  int n;
-  scanf("%d", &n);
-  int result = 1;
-  for (int i = 1; i <= n; ++i) {
-    result *= i;
-  }
-  printf("%d的阶乘为: %d\n", n, result);
-  // n_max = 12
+    // (b)
+    printf("Enter a positive integer: ");
+    int n;
+    scanf("%d", &n);
+    int result = 1;
+    for (int i = 1; i <= n; ++i) {
+        result *= i;
+    }
+    printf("%d的阶乘为: %d\n", n, result);
+    // n_max = 12
 
-  return 0;
+    return 0;
 }

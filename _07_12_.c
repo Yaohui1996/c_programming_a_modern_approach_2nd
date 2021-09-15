@@ -7,7 +7,7 @@
 #include <stdio.h>
 
 int main() {
-  // TODO
+    // TODO
 
-  return 0;
+    return 0;
 }

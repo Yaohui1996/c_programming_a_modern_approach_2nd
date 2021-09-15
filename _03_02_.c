@@ -5,19 +5,19 @@
 #include <stdio.h>
 
 int main() {
-  unsigned int number;
-  printf("Enter item number: ");
-  scanf("%u", &number);
-  float price;
-  printf("Enter unit price: ");
-  scanf("%f", &price);
-  unsigned int month;
-  unsigned int day;
-  unsigned int year;
-  printf("Enter purchase date (mm/dd/yyyy): ");
-  scanf("%u/%u/%u", &month, &day, &year);
-  printf("Item\tUnit\tPurchase\n");
-  printf("\tPrice\tDate\n");
-  printf("%-u\t$%7.2f\t%-u/%-u/%-u\n", number, price, month, day, year);
-  return 0;
+    unsigned int number;
+    printf("Enter item number: ");
+    scanf("%u", &number);
+    float price;
+    printf("Enter unit price: ");
+    scanf("%f", &price);
+    unsigned int month;
+    unsigned int day;
+    unsigned int year;
+    printf("Enter purchase date (mm/dd/yyyy): ");
+    scanf("%u/%u/%u", &month, &day, &year);
+    printf("Item\tUnit\tPurchase\n");
+    printf("\tPrice\tDate\n");
+    printf("%-u\t$%7.2f\t%-u/%-u/%-u\n", number, price, month, day, year);
+    return 0;
 }

@@ -31,41 +31,41 @@ void read_word(int counts[26]);
 bool equal_array(int counts1[26], int counts2[26]);
 
 int main() {
-  int arr_1[26] = {0};
-  int arr_2[26] = {0};
+    int arr_1[26] = {0};
+    int arr_2[26] = {0};
 
-  printf("Enter first word: ");
-  read_word(arr_1);
+    printf("Enter first word: ");
+    read_word(arr_1);
 
-  printf("Enter second word: ");
-  read_word(arr_2);
+    printf("Enter second word: ");
+    read_word(arr_2);
 
-  if (equal_array(arr_1, arr_2)) {
-    printf("The words are anagrams.\n");
-  } else {
-    printf("The words are not anagrams.\n");
-  }
+    if (equal_array(arr_1, arr_2)) {
+        printf("The words are anagrams.\n");
+    } else {
+        printf("The words are not anagrams.\n");
+    }
 
-  return 0;
+    return 0;
 }
 
 void read_word(int counts[26]) {
-  char ch;
-  ch = getchar();
-  ch = toupper(ch);
-  while (ch != '\n') {
-    if (isalpha(ch)) {
-      ++counts[ch - 65];
-    }
+    char ch;
     ch = getchar();
     ch = toupper(ch);
-  }
+    while (ch != '\n') {
+        if (isalpha(ch)) {
+            ++counts[ch - 65];
+        }
+        ch = getchar();
+        ch = toupper(ch);
+    }
 }
 bool equal_array(int counts1[26], int counts2[26]) {
-  for (size_t i = 0; i != 26; ++i) {
-    if (counts1[i] != counts2[i]) {
-      return false;
+    for (size_t i = 0; i != 26; ++i) {
+        if (counts1[i] != counts2[i]) {
+            return false;
+        }
     }
-  }
-  return true;
+    return true;
 }

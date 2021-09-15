@@ -18,42 +18,42 @@
 #include <stdio.h>
 
 int main() {
-  int arr[26] = {0};
-  printf("Enter first word: ");
-  char ch;
-  ch = getchar();
-  ch = toupper(ch);
-  while (ch != '\n') {
-    if (isalpha(ch)) {
-      ++arr[ch - 65];
-    }
+    int arr[26] = {0};
+    printf("Enter first word: ");
+    char ch;
     ch = getchar();
     ch = toupper(ch);
-  }
-
-  printf("Enter second word: ");
-  ch = getchar();
-  ch = toupper(ch);
-  while (ch != '\n') {
-    if (isalpha(ch)) {
-      --arr[ch - 65];
+    while (ch != '\n') {
+        if (isalpha(ch)) {
+            ++arr[ch - 65];
+        }
+        ch = getchar();
+        ch = toupper(ch);
     }
+
+    printf("Enter second word: ");
     ch = getchar();
     ch = toupper(ch);
-  }
-
-  int flag = 0;
-  for (size_t i = 0; i != 26; ++i) {
-    if (arr[i] != 0) {
-      flag = 1;
-      break;
+    while (ch != '\n') {
+        if (isalpha(ch)) {
+            --arr[ch - 65];
+        }
+        ch = getchar();
+        ch = toupper(ch);
     }
-  }
-  if (flag == 0) {
-    printf("The words are anagrams.\n");
-  } else {
-    printf("The words are not anagrams.\n");
-  }
 
-  return 0;
+    int flag = 0;
+    for (size_t i = 0; i != 26; ++i) {
+        if (arr[i] != 0) {
+            flag = 1;
+            break;
+        }
+    }
+    if (flag == 0) {
+        printf("The words are anagrams.\n");
+    } else {
+        printf("The words are not anagrams.\n");
+    }
+
+    return 0;
 }

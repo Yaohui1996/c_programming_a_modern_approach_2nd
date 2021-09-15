@@ -13,15 +13,15 @@
 #include <stdio.h>
 
 int main() {
-  // (c)
-  printf("Enter a positive integer: ");
-  long n;
-  scanf("%ld", &n);
-  long result = 1;
-  for (long i = 1; i <= n; ++i) {
-    result *= i;
-  }
-  printf("%ld的阶乘为: %ld\n", n, result);
-  // n_max = 20
-  return 0;
+    // (c)
+    printf("Enter a positive integer: ");
+    long n;
+    scanf("%ld", &n);
+    long result = 1;
+    for (long i = 1; i <= n; ++i) {
+        result *= i;
+    }
+    printf("%ld的阶乘为: %ld\n", n, result);
+    // n_max = 20
+    return 0;
 }

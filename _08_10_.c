@@ -34,49 +34,53 @@
 #define N 8
 
 int main() {
-  const int DEPARTURE_TIME_ARR[N] = {480, 583, 679, 767, 840, 945, 1140, 1305};
-  const int ARRIVE_TIME_ARR[N] = {616, 712, 811, 900, 968, 1075, 1280, 1438};
+    const int DEPARTURE_TIME_ARR[N] = {480, 583, 679,  767,
+                                       840, 945, 1140, 1305};
+    const int ARRIVE_TIME_ARR[N] = {616, 712, 811, 900, 968, 1075, 1280, 1438};
 
-  int hour, min;
-  printf("Enter a 24-hour time: ");
-  scanf("%d:%d", &hour, &min);
-  int input_time = hour * 60 + min;
-  int min_minus = 1440;
-  int arrive_hour, arrive_min;
-  for (size_t i = 0; i != N; ++i) {
-    if (DEPARTURE_TIME_ARR[i] - input_time >= 0 &&
-        min_minus > DEPARTURE_TIME_ARR[i] - input_time) {
-      min_minus = DEPARTURE_TIME_ARR[i] - input_time;
+    int hour, min;
+    printf("Enter a 24-hour time: ");
+    scanf("%d:%d", &hour, &min);
+    int input_time = hour * 60 + min;
+    int min_minus = 1440;
+    int arrive_hour, arrive_min;
+    for (size_t i = 0; i != N; ++i) {
+        if (DEPARTURE_TIME_ARR[i] - input_time >= 0 &&
+            min_minus > DEPARTURE_TIME_ARR[i] - input_time) {
+            min_minus = DEPARTURE_TIME_ARR[i] - input_time;
+        }
     }
-  }
-  for (size_t i = 0; i != N; ++i) {
-    if (min_minus + input_time == DEPARTURE_TIME_ARR[i]) {
-      arrive_hour = ARRIVE_TIME_ARR[i] / 60;
-      arrive_min = ARRIVE_TIME_ARR[i] - arrive_hour * 60;
+    for (size_t i = 0; i != N; ++i) {
+        if (min_minus + input_time == DEPARTURE_TIME_ARR[i]) {
+            arrive_hour = ARRIVE_TIME_ARR[i] / 60;
+            arrive_min = ARRIVE_TIME_ARR[i] - arrive_hour * 60;
+        }
     }
-  }
 
-  int depature_hour = (input_time + min_minus) / 60;
-  int depature_min = (input_time + min_minus) % 60;
+    int depature_hour = (input_time + min_minus) / 60;
+    int depature_min = (input_time + min_minus) % 60;
 
-  if (depature_hour > 12 && arrive_hour > 12)
-    printf("Close departure time is %1d%1d:%1d%1d p.m., arriving at "
-           "%1d%1d:%1d%1d "
-           "p.m.\n",
-           (depature_hour - 12) / 10, (depature_hour - 12) % 10,
-           depature_min / 10, depature_min % 10, (arrive_hour - 12) / 10,
-           (arrive_hour - 12) % 10, arrive_min / 10, arrive_min % 10);
-  if (depature_hour <= 12 && arrive_hour > 12)
-    printf("Close departure time is %1d%1d:%1d%1d a.m., arriving at "
-           "%1d%1d:%1d%1d p.m.\n",
-           depature_hour / 10, depature_hour % 10, depature_min / 10,
-           depature_min % 10, (arrive_hour - 12) / 10, (arrive_hour - 12) % 10,
-           arrive_min / 10, arrive_min % 10);
-  if (depature_hour <= 12 && arrive_hour <= 12)
-    printf("Close departure time is %1d%1d:%1d%1d a.m., arriving at "
-           "%1d%1d:%1d%1d a.m.\n",
-           depature_hour / 10, depature_hour % 10, depature_min / 10,
-           depature_min % 10, arrive_hour / 10, arrive_hour % 10,
-           arrive_min / 10, arrive_min % 10);
-  return 0;
+    if (depature_hour > 12 && arrive_hour > 12)
+        printf(
+            "Close departure time is %1d%1d:%1d%1d p.m., arriving at "
+            "%1d%1d:%1d%1d "
+            "p.m.\n",
+            (depature_hour - 12) / 10, (depature_hour - 12) % 10,
+            depature_min / 10, depature_min % 10, (arrive_hour - 12) / 10,
+            (arrive_hour - 12) % 10, arrive_min / 10, arrive_min % 10);
+    if (depature_hour <= 12 && arrive_hour > 12)
+        printf(
+            "Close departure time is %1d%1d:%1d%1d a.m., arriving at "
+            "%1d%1d:%1d%1d p.m.\n",
+            depature_hour / 10, depature_hour % 10, depature_min / 10,
+            depature_min % 10, (arrive_hour - 12) / 10, (arrive_hour - 12) % 10,
+            arrive_min / 10, arrive_min % 10);
+    if (depature_hour <= 12 && arrive_hour <= 12)
+        printf(
+            "Close departure time is %1d%1d:%1d%1d a.m., arriving at "
+            "%1d%1d:%1d%1d a.m.\n",
+            depature_hour / 10, depature_hour % 10, depature_min / 10,
+            depature_min % 10, arrive_hour / 10, arrive_hour % 10,
+            arrive_min / 10, arrive_min % 10);
+    return 0;
 }

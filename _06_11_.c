@@ -4,17 +4,17 @@
 #include <stdio.h>
 
 int main() {
-  unsigned int n;
-  float e = 1;
-  printf("请输入整数n: ");
-  scanf("%u", &n);
-  for (unsigned int i = 1; i <= n; ++i) {
-    unsigned temp = 1;
-    for (unsigned j = 1; j <= i; ++j) {
-      temp *= j;
+    unsigned int n;
+    float e = 1;
+    printf("请输入整数n: ");
+    scanf("%u", &n);
+    for (unsigned int i = 1; i <= n; ++i) {
+        unsigned int temp = 1;
+        for (unsigned int j = 1; j <= i; ++j) {
+            temp *= j;
+        }
+        e += 1.0f / (float)temp;
     }
-    e += 1.0f / temp;
-  }
-  printf("e: %f\n", e);
-  return 0;
+    printf("e: %f\n", e);
+    return 0;
 }

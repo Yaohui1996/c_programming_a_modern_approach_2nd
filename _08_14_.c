@@ -10,34 +10,34 @@
 #include <stdio.h>
 
 int main() {
-  printf("Enter a sentence: ");
-  char char_arr[100];
-  int i = 0;
-  char ch;
-  ch = getchar();
-  while (ch != '.' || ch != '?' || ch != '!') {
-    char_arr[i] = ch;
+    printf("Enter a sentence: ");
+    char char_arr[100];
+    int i = 0;
+    char ch;
     ch = getchar();
-    ++i;
-  }
-
-  // 保存终止字符
-  char end_symbol = getchar();
-
-  for (int t = 0; t <= i; ++t) printf("%c", char_arr[t]);
-
-  // 反向输出
-
-  while (i >= 0) {
-    int end_i = i;
-    int start_i = 0;
-    while (char_arr[i] != ' ' && i != 0) {
-      --i;
+    while (ch != '.' || ch != '?' || ch != '!') {
+        char_arr[i] = ch;
+        ch = getchar();
+        ++i;
     }
-    start_i = i + 1;
-    for (int j = start_i; j <= end_i; ++j) printf("%c", char_arr[j]);
-    --i;
-  }
-  printf("%c\n", end_symbol);
-  return 0;
+
+    // 保存终止字符
+    char end_symbol = getchar();
+
+    for (int t = 0; t <= i; ++t) printf("%c", char_arr[t]);
+
+    // 反向输出
+
+    while (i >= 0) {
+        int end_i = i;
+        int start_i = 0;
+        while (char_arr[i] != ' ' && i != 0) {
+            --i;
+        }
+        start_i = i + 1;
+        for (int j = start_i; j <= end_i; ++j) printf("%c", char_arr[j]);
+        --i;
+    }
+    printf("%c\n", end_symbol);
+    return 0;
 }

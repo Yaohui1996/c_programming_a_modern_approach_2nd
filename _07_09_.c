@@ -25,23 +25,23 @@
 #define ARRIVE_TIME_7 1438  // 11:58 PM
 
 int main() {
-  int hour, min;
-  char ch;
-  printf("Enter a 12-hour time: ");
-  scanf("%d:%d", &hour, &min);
-  ch = getchar();
-  ch = toupper(ch);
-  while (ch != 'A' && ch != 'P') {
+    int hour, min;
+    char ch;
+    printf("Enter a 12-hour time: ");
+    scanf("%d:%d", &hour, &min);
     ch = getchar();
     ch = toupper(ch);
-  }
-  if (ch == 'A') {
-  } else if (ch == 'P') {
-    hour += 12;
-  } else {
-    printf("请按照正确的格式输入时刻！！！ \n");
-    return -1;
-  }
-  printf("Equivalent 24-hour time: %d:%d\n", hour, min);
-  return 0;
+    while (ch != 'A' && ch != 'P') {
+        ch = getchar();
+        ch = toupper(ch);
+    }
+    if (ch == 'A') {
+    } else if (ch == 'P') {
+        hour += 12;
+    } else {
+        printf("请按照正确的格式输入时刻！！！ \n");
+        return -1;
+    }
+    printf("Equivalent 24-hour time: %d:%d\n", hour, min);
+    return 0;
 }

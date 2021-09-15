@@ -4,20 +4,20 @@
 #include <stdio.h>
 
 int main() {
-  int a, b, c, d;
-  char ch;
-  printf("Enter two fractions: ");
-  scanf("%d/%d", &a, &b);
-  ch = getchar();
-  scanf("%d/%d", &c, &d);
-  if (ch == '+') {
-    printf("The sum is %d/%d\n", a * d + b * c, b * d);
-  } else if (ch == '-') {
-    printf("The minus is %d/%d\n", a * d - b * c, b * d);
-  } else if (ch == '*') {
-    printf("The product is %d/%d\n", a * c, b * d);
-  } else if (ch == '/') {
-    printf("The division is %d/%d\n", a * d, b * c);
-  }
-  return 0;
+    int a, b, c, d;
+    char ch;
+    printf("Enter two fractions: ");
+    scanf("%d/%d", &a, &b);
+    ch = getchar();
+    scanf("%d/%d", &c, &d);
+    if (ch == '+') {
+        printf("The sum is %d/%d\n", a * d + b * c, b * d);
+    } else if (ch == '-') {
+        printf("The minus is %d/%d\n", a * d - b * c, b * d);
+    } else if (ch == '*') {
+        printf("The product is %d/%d\n", a * c, b * d);
+    } else if (ch == '/') {
+        printf("The division is %d/%d\n", a * d, b * c);
+    }
+    return 0;
 }

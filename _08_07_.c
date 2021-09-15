@@ -13,32 +13,32 @@
 #define N 5
 
 int main() {
-  int int_array[M][N] = {0};
-  for (size_t i = 0; i != M; ++i) {
-    printf("Enter row %zu: ", i + 1);
-    scanf("%d %d %d %d %d", &int_array[i][0], &int_array[i][1],
-          &int_array[i][2], &int_array[i][3], &int_array[i][4]);
-  }
-
-  printf("Row totals: ");
-  for (size_t i = 0; i != M; ++i) {
-    int sum = 0;
-    for (size_t j = 0; j != N; ++j) {
-      sum += int_array[i][j];
-    }
-    printf("%d ", sum);
-  }
-  printf("\n");
-
-  printf("Column totals: ");
-  for (size_t j = 0; j != N; ++j) {
-    int sum = 0;
+    int int_array[M][N] = {0};
     for (size_t i = 0; i != M; ++i) {
-      sum += int_array[i][j];
+        printf("Enter row %zu: ", i + 1);
+        scanf("%d %d %d %d %d", &int_array[i][0], &int_array[i][1],
+              &int_array[i][2], &int_array[i][3], &int_array[i][4]);
     }
-    printf("%d ", sum);
-  }
-  printf("\n");
 
-  return 0;
+    printf("Row totals: ");
+    for (size_t i = 0; i != M; ++i) {
+        int sum = 0;
+        for (size_t j = 0; j != N; ++j) {
+            sum += int_array[i][j];
+        }
+        printf("%d ", sum);
+    }
+    printf("\n");
+
+    printf("Column totals: ");
+    for (size_t j = 0; j != N; ++j) {
+        int sum = 0;
+        for (size_t i = 0; i != M; ++i) {
+            sum += int_array[i][j];
+        }
+        printf("%d ", sum);
+    }
+    printf("\n");
+
+    return 0;
 }

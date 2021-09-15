@@ -7,24 +7,24 @@
 #include <stdbool.h> /* C99 only */
 #include <stdio.h>
 int main(void) {
-  unsigned int digit_seen[10] = {0};
-  long digit;
-  long n;
-  printf("Enter a number: ");
-  scanf("%ld", &n);
-  while (n > 0) {
-    digit = n % 10;
-    digit_seen[digit] += 1;
-    n /= 10;
-  }
-  printf("Digit: ");
-  for (size_t i = 0; i < 10; ++i) {
-    printf("%zu ", i);
-  }
-  printf("\nOccurrences: ");
-  for (size_t i = 0; i < 10; ++i) {
-    printf("%u ", digit_seen[i]);
-  }
-  printf("\n");
-  return 0;
+    unsigned int digit_seen[10] = {0};
+    long digit;
+    long n;
+    printf("Enter a number: ");
+    scanf("%ld", &n);
+    while (n > 0) {
+        digit = n % 10;
+        digit_seen[digit] += 1;
+        n /= 10;
+    }
+    printf("Digit: ");
+    for (size_t i = 0; i < 10; ++i) {
+        printf("%zu ", i);
+    }
+    printf("\nOccurrences: ");
+    for (size_t i = 0; i < 10; ++i) {
+        printf("%u ", digit_seen[i]);
+    }
+    printf("\n");
+    return 0;
 }

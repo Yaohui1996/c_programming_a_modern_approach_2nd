@@ -21,99 +21,99 @@
 #include <stdio.h>
 
 int main() {
-  printf("This program creates a magic square of a specified size. ");
-  printf("The size must be an odd number between 1 and 99. ");
+    printf("This program creates a magic square of a specified size. ");
+    printf("The size must be an odd number between 1 and 99. ");
 
-  int arr[99][99] = {0};
+    int arr[99][99] = {0};
 
-  int n;
-  printf("Enter size of magic square: ");
-  scanf("%d", &n);
+    int n;
+    printf("Enter size of magic square: ");
+    scanf("%d", &n);
 
-  int i = 0;
-  int j = n / 2;
-  int num = 1;
+    int i = 0;
+    int j = n / 2;
+    int num = 1;
 
-  arr[i][j] = num;
-  ++num;
-
-  while (num <= n * n) {
-    // 更新i
-    if (i - 1 == -1) {
-      i = n - 1;
-    } else {
-      --i;
-    }
-
-    // 更新j
-    if (j + 1 == n) {
-      j = 0;
-    } else {
-      ++j;
-    }
-
-    // 更新arr[i][j]
-    if (arr[i][j] != 0) {
-      // 还原顺序先左后下
-      // 更新j
-      if (j - 1 == -1) {
-        j = n - 1;
-      } else {
-        --j;
-      }
-      // 更新i
-      if (i + 1 == n) {
-        i = 0;
-      } else {
-        ++i;
-      }
-
-      // 再次前进
-      ++i;
-    }
-    // 赋值
     arr[i][j] = num;
-
-    // 更新num
     ++num;
-  }
 
-  // 输出
-  for (int i = 0; i != n; ++i) {
-    for (int j = 0; j != n; ++j) {
-      printf("%4d ", arr[i][j]);
+    while (num <= n * n) {
+        // 更新i
+        if (i - 1 == -1) {
+            i = n - 1;
+        } else {
+            --i;
+        }
+
+        // 更新j
+        if (j + 1 == n) {
+            j = 0;
+        } else {
+            ++j;
+        }
+
+        // 更新arr[i][j]
+        if (arr[i][j] != 0) {
+            // 还原顺序先左后下
+            // 更新j
+            if (j - 1 == -1) {
+                j = n - 1;
+            } else {
+                --j;
+            }
+            // 更新i
+            if (i + 1 == n) {
+                i = 0;
+            } else {
+                ++i;
+            }
+
+            // 再次前进
+            ++i;
+        }
+        // 赋值
+        arr[i][j] = num;
+
+        // 更新num
+        ++num;
+    }
+
+    // 输出
+    for (int i = 0; i != n; ++i) {
+        for (int j = 0; j != n; ++j) {
+            printf("%4d ", arr[i][j]);
+        }
+        printf("\n");
+    }
+
+    // 对行求和
+    for (int i = 0; i != n; ++i) {
+        int sum = 0;
+        for (int j = 0; j != n; ++j) {
+            sum += arr[i][j];
+        }
+        printf("第%d行的和为：%d \n", i + 1, sum);
     }
     printf("\n");
-  }
-
-  // 对行求和
-  for (int i = 0; i != n; ++i) {
-    int sum = 0;
+    // 对列求和
     for (int j = 0; j != n; ++j) {
-      sum += arr[i][j];
+        int sum = 0;
+        for (int i = 0; i != n; ++i) {
+            sum += arr[i][j];
+        }
+        printf("第%d列的和为：%d \n", j + 1, sum);
     }
-    printf("第%d行的和为：%d \n", i + 1, sum);
-  }
-  printf("\n");
-  // 对列求和
-  for (int j = 0; j != n; ++j) {
+    // 左上到右下对角线
     int sum = 0;
     for (int i = 0; i != n; ++i) {
-      sum += arr[i][j];
+        sum += arr[i][i];
     }
-    printf("第%d列的和为：%d \n", j + 1, sum);
-  }
-  // 左上到右下对角线
-  int sum = 0;
-  for (int i = 0; i != n; ++i) {
-    sum += arr[i][i];
-  }
-  printf("左上到右下对角线的和为：%d \n", sum);
-  // 右上到左下对角线
-  sum = 0;
-  for (int i = 0; i != n; ++i) {
-    sum += arr[i][n - i - 1];
-  }
-  printf("右上到左下对角线的和为：%d \n", sum);
-  return 0;
+    printf("左上到右下对角线的和为：%d \n", sum);
+    // 右上到左下对角线
+    sum = 0;
+    for (int i = 0; i != n; ++i) {
+        sum += arr[i][n - i - 1];
+    }
+    printf("右上到左下对角线的和为：%d \n", sum);
+    return 0;
 }

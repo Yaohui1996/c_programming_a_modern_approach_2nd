@@ -6,23 +6,23 @@
 #include <stdbool.h> /* C99 only */
 #include <stdio.h>
 int main(void) {
-  unsigned int digit_seen[10] = {0};
-  long digit;
-  long n;
-  printf("Enter a number: ");
-  scanf("%ld", &n);
-  while (n > 0) {
-    digit = n % 10;
-    digit_seen[digit] += 1;
-    n /= 10;
-  }
-
-  printf("Repeated digit(s): ");
-  for (size_t i = 0; i < 10; ++i) {
-    if (digit_seen[i] > 1) {
-      printf("%lu ", i);
+    unsigned int digit_seen[10] = {0};
+    long digit;
+    long n;
+    printf("Enter a number: ");
+    scanf("%ld", &n);
+    while (n > 0) {
+        digit = n % 10;
+        digit_seen[digit] += 1;
+        n /= 10;
     }
-  }
-  printf("\n");
-  return 0;
+
+    printf("Repeated digit(s): ");
+    for (size_t i = 0; i < 10; ++i) {
+        if (digit_seen[i] > 1) {
+            printf("%lu ", i);
+        }
+    }
+    printf("\n");
+    return 0;
 }

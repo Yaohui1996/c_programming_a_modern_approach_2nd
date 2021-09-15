@@ -8,24 +8,24 @@
 #include <stdio.h>
 
 int main() {
-  unsigned int number_of_days, starting_day;
-  printf("Enter number of days in month : ");
-  scanf("%u", &number_of_days);
-  printf("Enter starting day of the week(1 = Sun,7 = Sat) : ");
-  scanf("%u", &starting_day);
-  unsigned int t = 1;
-  for (unsigned int i = 0; i <= number_of_days; ++i) {
-    if (t < starting_day) {
-      printf("   ");
-    } else {
-      if (t % 7 == 0) {
-        printf("%2u \n", i);
-      } else {
-        printf("%2u ", i);
-      }
+    unsigned int number_of_days, starting_day;
+    printf("Enter number of days in month : ");
+    scanf("%u", &number_of_days);
+    printf("Enter starting day of the week(1 = Sun,7 = Sat) : ");
+    scanf("%u", &starting_day);
+    unsigned int t = 1;
+    for (unsigned int i = 0; i <= number_of_days; ++i) {
+        if (t < starting_day) {
+            printf("   ");
+        } else {
+            if (t % 7 == 0) {
+                printf("%2u \n", i);
+            } else {
+                printf("%2u ", i);
+            }
+        }
+        ++t;
     }
-    ++t;
-  }
 
-  return 0;
+    return 0;
 }

@@ -17,47 +17,47 @@
 #include <stdio.h>
 
 int main() {
-  char phone_number[15];
-  char ch;
-  printf("Enter phone number: ");
-  size_t i = 0;
-  while ((ch = getchar()) != '\n') {
-    ch = toupper(ch);
-    if (ch >= 65 && ch <= 90) {
-      if (ch == 'A' || ch == 'B' || ch == 'C') {
-        phone_number[i] = '2';
-        ++i;
-      } else if (ch == 'D' || ch == 'E' || ch == 'F') {
-        phone_number[i] = '3';
-        ++i;
-      } else if (ch == 'G' || ch == 'H' || ch == 'I') {
-        phone_number[i] = '4';
-        ++i;
-      } else if (ch == 'J' || ch == 'K' || ch == 'L') {
-        phone_number[i] = '5';
-        ++i;
-      } else if (ch == 'M' || ch == 'N' || ch == 'O') {
-        phone_number[i] = '6';
-        ++i;
-      } else if (ch == 'P' || ch == 'Q' || ch == 'R' || ch == 'S') {
-        phone_number[i] = '7';
-        ++i;
-      } else if (ch == 'T' || ch == 'U' || ch == 'V') {
-        phone_number[i] = '8';
-        ++i;
-      } else if (ch == 'W' || ch == 'X' || ch == 'Y' || ch == 'Z') {
-        phone_number[i] = '9';
-        ++i;
-      }
-    } else {
-      phone_number[i] = ch;
-      ++i;
+    char phone_number[15];
+    char ch;
+    printf("Enter phone number: ");
+    size_t i = 0;
+    while ((ch = getchar()) != '\n') {
+        ch = toupper(ch);
+        if (ch >= 65 && ch <= 90) {
+            if (ch == 'A' || ch == 'B' || ch == 'C') {
+                phone_number[i] = '2';
+                ++i;
+            } else if (ch == 'D' || ch == 'E' || ch == 'F') {
+                phone_number[i] = '3';
+                ++i;
+            } else if (ch == 'G' || ch == 'H' || ch == 'I') {
+                phone_number[i] = '4';
+                ++i;
+            } else if (ch == 'J' || ch == 'K' || ch == 'L') {
+                phone_number[i] = '5';
+                ++i;
+            } else if (ch == 'M' || ch == 'N' || ch == 'O') {
+                phone_number[i] = '6';
+                ++i;
+            } else if (ch == 'P' || ch == 'Q' || ch == 'R' || ch == 'S') {
+                phone_number[i] = '7';
+                ++i;
+            } else if (ch == 'T' || ch == 'U' || ch == 'V') {
+                phone_number[i] = '8';
+                ++i;
+            } else if (ch == 'W' || ch == 'X' || ch == 'Y' || ch == 'Z') {
+                phone_number[i] = '9';
+                ++i;
+            }
+        } else {
+            phone_number[i] = ch;
+            ++i;
+        }
     }
-  }
-  printf("In numeric form: ");
-  for (size_t i = 0; i != 15; ++i) {
-    printf("%c", phone_number[i]);
-  }
-  printf("\n");
-  return 0;
+    printf("In numeric form: ");
+    for (size_t i = 0; i != 15; ++i) {
+        printf("%c", phone_number[i]);
+    }
+    printf("\n");
+    return 0;
 }

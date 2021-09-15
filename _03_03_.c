@@ -14,17 +14,17 @@
 #include <stdio.h>
 
 int main() {
-  unsigned int GS1_p;
-  unsigned int g_i;
-  unsigned int p_c;
-  unsigned int i_n;
-  unsigned int c_d;
-  printf("Enter ISBN: ");
-  scanf("%u-%u-%u-%u-%u", &GS1_p, &g_i, &p_c, &i_n, &c_d);
-  printf("GS1 prefix: %u\n", GS1_p);
-  printf("Group identifier: %u\n", g_i);
-  printf("Publisher code: %u\n", p_c);
-  printf("Item number: %u\n", i_n);
-  printf("Check digit: %u\n", c_d);
-  return 0;
+    unsigned int GS1_p;
+    unsigned int g_i;
+    unsigned int p_c;
+    unsigned int i_n;
+    unsigned int c_d;
+    printf("Enter ISBN: ");
+    scanf("%u-%u-%u-%u-%u", &GS1_p, &g_i, &p_c, &i_n, &c_d);
+    printf("GS1 prefix: %u\n", GS1_p);
+    printf("Group identifier: %u\n", g_i);
+    printf("Publisher code: %u\n", p_c);
+    printf("Item number: %u\n", i_n);
+    printf("Check digit: %u\n", c_d);
+    return 0;
 }

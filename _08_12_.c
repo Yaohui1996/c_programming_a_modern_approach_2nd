@@ -16,16 +16,16 @@
 #include <stdio.h>
 
 int main() {
-  const uint64_t arr[26] = {1, 3, 3, 2,  1, 4, 2, 4, 1, 8, 5, 1, 3,
-                            1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
+    const uint64_t arr[26] = {1, 3, 3, 2,  1, 4, 2, 4, 1, 8, 5, 1, 3,
+                              1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
 
-  char ch;
-  uint64_t scrabble_value = 0;
-  printf("Enter a word:: ");
-  while ((ch = getchar()) != '\n') {
-    ch = toupper(ch);
-    if (ch >= 65 && ch <= 90) scrabble_value += arr[ch - 65];
-  }
-  printf("Scrabble value: %llu\n", scrabble_value);
-  return 0;
+    char ch;
+    uint64_t scrabble_value = 0;
+    printf("Enter a word:: ");
+    while ((ch = getchar()) != '\n') {
+        ch = toupper(ch);
+        if (ch >= 65 && ch <= 90) scrabble_value += arr[ch - 65];
+    }
+    printf("Scrabble value: %llu\n", scrabble_value);
+    return 0;
 }

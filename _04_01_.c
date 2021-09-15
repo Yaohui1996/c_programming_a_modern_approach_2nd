@@ -4,12 +4,12 @@
 #include <stdio.h>
 
 int main() {
-  int x;
-  printf("Enter a two-digit number: ");
-  scanf("%d", &x);
-  int a, b;
-  a = x % 10;
-  b = x / 10;
-  printf("The reversal is: %d%d\n", a, b);
-  return 0;
+    int x;
+    printf("Enter a two-digit number: ");
+    scanf("%d", &x);
+    int a, b;
+    a = x % 10;
+    b = x / 10;
+    printf("The reversal is: %d%d\n", a, b);
+    return 0;
 }

@@ -13,26 +13,26 @@
 int power(int x, int n);
 
 int main() {
-  printf("%d\n", power(2, 1));
-  printf("%d\n", power(2, 2));
-  printf("%d\n", power(2, 3));
-  printf("%d\n", power(2, 4));
-  printf("%d\n", power(2, 5));
-  printf("%d\n", power(2, 6));
-  printf("%d\n", power(2, 7));
-  printf("%d\n", power(2, 8));
-  printf("%d\n", power(2, 16));
-  return 0;
+    printf("%d\n", power(2, 1));
+    printf("%d\n", power(2, 2));
+    printf("%d\n", power(2, 3));
+    printf("%d\n", power(2, 4));
+    printf("%d\n", power(2, 5));
+    printf("%d\n", power(2, 6));
+    printf("%d\n", power(2, 7));
+    printf("%d\n", power(2, 8));
+    printf("%d\n", power(2, 16));
+    return 0;
 }
 
 int power(int x, int n) {
-  if (n == 0) {
-    return 1;
-  } else {
-    if (n % 2 == 0) {
-      return power(x, n / 2) * power(x, n / 2);
+    if (n == 0) {
+        return 1;
     } else {
-      return x * power(x, n - 1);
+        if (n % 2 == 0) {
+            return power(x, n / 2) * power(x, n / 2);
+        } else {
+            return x * power(x, n - 1);
+        }
     }
-  }
 }

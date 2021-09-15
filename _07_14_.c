@@ -20,18 +20,18 @@
 #include <stdio.h>
 
 int main() {
-  double x;
-  printf("Enter a positive number: ");
-  scanf("%lf", &x);
+    double x;
+    printf("Enter a positive number: ");
+    scanf("%lf", &x);
 
-  double y = 1.0;
-  double eps = 0.00001;
-  double y_old = x;
-  while (fabs(y_old - y) >= eps) {
-    y_old = y;
-    y = (x / y + y) / 2;
-  }
+    double y = 1.0;
+    double eps = 0.00001;
+    double y_old = x;
+    while (fabs(y_old - y) >= eps) {
+        y_old = y;
+        y = (x / y + y) / 2;
+    }
 
-  printf("Square root: %f\n", y);
-  return 0;
+    printf("Square root: %f\n", y);
+    return 0;
 }

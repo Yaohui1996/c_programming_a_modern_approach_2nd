@@ -27,34 +27,34 @@ void push(char);
 char pop(void);
 
 int main() {
-  printf("Enter parenteses and/or braces: ");
-  char ch = getchar();
-  while (ch != '\n') {
-    if (ch == '(' || ch == '{') {
-      push(ch);
-      ch = getchar();
-    } else if (ch == ')' || ch == '}') {
-      char to_pop = pop();
-      if (ch == ')' && to_pop == '(') {
-        ch = getchar();
-        continue;
-      } else if (ch == '}' && to_pop == '{') {
-        ch = getchar();
-        continue;
-      } else {
-        push(to_pop);
-        push(ch);
-        break;
-      }
+    printf("Enter parenteses and/or braces: ");
+    char ch = getchar();
+    while (ch != '\n') {
+        if (ch == '(' || ch == '{') {
+            push(ch);
+            ch = getchar();
+        } else if (ch == ')' || ch == '}') {
+            char to_pop = pop();
+            if (ch == ')' && to_pop == '(') {
+                ch = getchar();
+                continue;
+            } else if (ch == '}' && to_pop == '{') {
+                ch = getchar();
+                continue;
+            } else {
+                push(to_pop);
+                push(ch);
+                break;
+            }
+        }
     }
-  }
-  if (!is_empty()) {
-    printf("括号不匹配!\n");
-  } else {
-    printf("括号匹配！\n");
-  }
+    if (!is_empty()) {
+        printf("括号不匹配!\n");
+    } else {
+        printf("括号匹配！\n");
+    }
 
-  return 0;
+    return 0;
 }
 
 void make_empty(void) { top = 0; }
@@ -64,19 +64,19 @@ bool is_empty(void) { return top == 0; }
 bool is_full(void) { return top == STACK_SIZE; }
 
 void push(char ch) {
-  if (is_full()) {
-    printf("stack满！\n");
-  } else {
-    contents[top] = ch;
-    ++top;
-  }
+    if (is_full()) {
+        printf("stack满！\n");
+    } else {
+        contents[top] = ch;
+        ++top;
+    }
 }
 
 char pop(void) {
-  if (is_empty()) {
-    printf("stack空！\n");
-  } else {
-    --top;
-  }
-  return contents[top];
+    if (is_empty()) {
+        printf("stack空！\n");
+    } else {
+        --top;
+    }
+    return contents[top];
 }

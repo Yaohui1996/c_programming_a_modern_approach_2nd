@@ -5,9 +5,9 @@
 #include <stdio.h>
 
 int main() {
-  float dollar;
-  scanf("%f", &dollar);
-  printf("Enter an amount: %.2f\n", dollar);
-  printf("With tax added: $%.2f\n", dollar * 1.05);
-  return 0;
+    float dollar;
+    scanf("%f", &dollar);
+    printf("Enter an amount: %.2f\n", dollar);
+    printf("With tax added: $%.2f\n", dollar * 1.05);
+    return 0;
 }

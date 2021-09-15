@@ -28,94 +28,94 @@
 #define ARRIVE_TIME_7 1438  // 11:58 PM
 
 int main() {
-  int hour, min;
-  printf("Enter a 24-hour time: ");
-  scanf("%d:%d", &hour, &min);
-  int input_time = hour * 60 + min;
-  int min_minus = 1440;
-  int arrive_hour, arrive_min;
-  if (DEPARTURE_TIME_0 - input_time >= 0 &&
-      min_minus > DEPARTURE_TIME_0 - input_time)
-    min_minus = DEPARTURE_TIME_0 - input_time;
-  if (DEPARTURE_TIME_1 - input_time >= 0 &&
-      min_minus > DEPARTURE_TIME_1 - input_time)
-    min_minus = DEPARTURE_TIME_1 - input_time;
-  if (DEPARTURE_TIME_2 - input_time >= 0 &&
-      min_minus > DEPARTURE_TIME_2 - input_time)
-    min_minus = DEPARTURE_TIME_2 - input_time;
-  if (DEPARTURE_TIME_3 - input_time >= 0 &&
-      min_minus > DEPARTURE_TIME_3 - input_time)
-    min_minus = DEPARTURE_TIME_3 - input_time;
-  if (DEPARTURE_TIME_4 - input_time >= 0 &&
-      min_minus > DEPARTURE_TIME_4 - input_time)
-    min_minus = DEPARTURE_TIME_4 - input_time;
-  if (DEPARTURE_TIME_5 - input_time >= 0 &&
-      min_minus > DEPARTURE_TIME_5 - input_time)
-    min_minus = DEPARTURE_TIME_5 - input_time;
-  if (DEPARTURE_TIME_6 - input_time >= 0 &&
-      min_minus > DEPARTURE_TIME_6 - input_time)
-    min_minus = DEPARTURE_TIME_6 - input_time;
-  if (DEPARTURE_TIME_7 - input_time >= 0 &&
-      min_minus > DEPARTURE_TIME_7 - input_time)
-    min_minus = DEPARTURE_TIME_7 - input_time;
+    int hour, min;
+    printf("Enter a 24-hour time: ");
+    scanf("%d:%d", &hour, &min);
+    int input_time = hour * 60 + min;
+    int min_minus = 1440;
+    int arrive_hour, arrive_min;
+    if (DEPARTURE_TIME_0 - input_time >= 0 &&
+        min_minus > DEPARTURE_TIME_0 - input_time)
+        min_minus = DEPARTURE_TIME_0 - input_time;
+    if (DEPARTURE_TIME_1 - input_time >= 0 &&
+        min_minus > DEPARTURE_TIME_1 - input_time)
+        min_minus = DEPARTURE_TIME_1 - input_time;
+    if (DEPARTURE_TIME_2 - input_time >= 0 &&
+        min_minus > DEPARTURE_TIME_2 - input_time)
+        min_minus = DEPARTURE_TIME_2 - input_time;
+    if (DEPARTURE_TIME_3 - input_time >= 0 &&
+        min_minus > DEPARTURE_TIME_3 - input_time)
+        min_minus = DEPARTURE_TIME_3 - input_time;
+    if (DEPARTURE_TIME_4 - input_time >= 0 &&
+        min_minus > DEPARTURE_TIME_4 - input_time)
+        min_minus = DEPARTURE_TIME_4 - input_time;
+    if (DEPARTURE_TIME_5 - input_time >= 0 &&
+        min_minus > DEPARTURE_TIME_5 - input_time)
+        min_minus = DEPARTURE_TIME_5 - input_time;
+    if (DEPARTURE_TIME_6 - input_time >= 0 &&
+        min_minus > DEPARTURE_TIME_6 - input_time)
+        min_minus = DEPARTURE_TIME_6 - input_time;
+    if (DEPARTURE_TIME_7 - input_time >= 0 &&
+        min_minus > DEPARTURE_TIME_7 - input_time)
+        min_minus = DEPARTURE_TIME_7 - input_time;
 
-  if (min_minus + input_time == DEPARTURE_TIME_0) {
-    arrive_hour = ARRIVE_TIME_0 / 60;
-    arrive_min = ARRIVE_TIME_0 - arrive_hour * 60;
-  }
-  if (min_minus + input_time == DEPARTURE_TIME_1) {
-    arrive_hour = ARRIVE_TIME_1 / 60;
-    arrive_min = ARRIVE_TIME_1 - arrive_hour * 60;
-  }
-  if (min_minus + input_time == DEPARTURE_TIME_2) {
-    arrive_hour = ARRIVE_TIME_2 / 60;
-    arrive_min = ARRIVE_TIME_2 - arrive_hour * 60;
-  }
-  if (min_minus + input_time == DEPARTURE_TIME_3) {
-    arrive_hour = ARRIVE_TIME_3 / 60;
-    arrive_min = ARRIVE_TIME_3 - arrive_hour * 60;
-  }
-  if (min_minus + input_time == DEPARTURE_TIME_4) {
-    arrive_hour = ARRIVE_TIME_4 / 60;
-    arrive_min = ARRIVE_TIME_4 - arrive_hour * 60;
-  }
-  if (min_minus + input_time == DEPARTURE_TIME_5) {
-    arrive_hour = ARRIVE_TIME_5 / 60;
-    arrive_min = ARRIVE_TIME_5 - arrive_hour * 60;
-  }
-  if (min_minus + input_time == DEPARTURE_TIME_6) {
-    arrive_hour = ARRIVE_TIME_6 / 60;
-    arrive_min = ARRIVE_TIME_6 - arrive_hour * 60;
-  }
-  if (min_minus + input_time == DEPARTURE_TIME_7) {
-    arrive_hour = ARRIVE_TIME_7 / 60;
-    arrive_min = ARRIVE_TIME_7 - arrive_hour * 60;
-  }
+    if (min_minus + input_time == DEPARTURE_TIME_0) {
+        arrive_hour = ARRIVE_TIME_0 / 60;
+        arrive_min = ARRIVE_TIME_0 - arrive_hour * 60;
+    }
+    if (min_minus + input_time == DEPARTURE_TIME_1) {
+        arrive_hour = ARRIVE_TIME_1 / 60;
+        arrive_min = ARRIVE_TIME_1 - arrive_hour * 60;
+    }
+    if (min_minus + input_time == DEPARTURE_TIME_2) {
+        arrive_hour = ARRIVE_TIME_2 / 60;
+        arrive_min = ARRIVE_TIME_2 - arrive_hour * 60;
+    }
+    if (min_minus + input_time == DEPARTURE_TIME_3) {
+        arrive_hour = ARRIVE_TIME_3 / 60;
+        arrive_min = ARRIVE_TIME_3 - arrive_hour * 60;
+    }
+    if (min_minus + input_time == DEPARTURE_TIME_4) {
+        arrive_hour = ARRIVE_TIME_4 / 60;
+        arrive_min = ARRIVE_TIME_4 - arrive_hour * 60;
+    }
+    if (min_minus + input_time == DEPARTURE_TIME_5) {
+        arrive_hour = ARRIVE_TIME_5 / 60;
+        arrive_min = ARRIVE_TIME_5 - arrive_hour * 60;
+    }
+    if (min_minus + input_time == DEPARTURE_TIME_6) {
+        arrive_hour = ARRIVE_TIME_6 / 60;
+        arrive_min = ARRIVE_TIME_6 - arrive_hour * 60;
+    }
+    if (min_minus + input_time == DEPARTURE_TIME_7) {
+        arrive_hour = ARRIVE_TIME_7 / 60;
+        arrive_min = ARRIVE_TIME_7 - arrive_hour * 60;
+    }
 
-  int depature_hour = (input_time + min_minus) / 60;
-  int depature_min = (input_time + min_minus) % 60;
+    int depature_hour = (input_time + min_minus) / 60;
+    int depature_min = (input_time + min_minus) % 60;
 
-  if (depature_hour > 12 && arrive_hour > 12)
-    printf(
-        "Close departure time is %1d%1d:%1d%1d p.m., arriving at "
-        "%1d%1d:%1d%1d "
-        "p.m.\n",
-        (depature_hour - 12) / 10, (depature_hour - 12) % 10, depature_min / 10,
-        depature_min % 10, (arrive_hour - 12) / 10, (arrive_hour - 12) % 10,
-        arrive_min / 10, arrive_min % 10);
-  if (depature_hour <= 12 && arrive_hour > 12)
-    printf(
-        "Close departure time is %1d%1d:%1d%1d a.m., arriving at "
-        "%1d%1d:%1d%1d p.m.\n",
-        depature_hour / 10, depature_hour % 10, depature_min / 10,
-        depature_min % 10, (arrive_hour - 12) / 10, (arrive_hour - 12) % 10,
-        arrive_min / 10, arrive_min % 10);
-  if (depature_hour <= 12 && arrive_hour <= 12)
-    printf(
-        "Close departure time is %1d%1d:%1d%1d a.m., arriving at "
-        "%1d%1d:%1d%1d a.m.\n",
-        depature_hour / 10, depature_hour % 10, depature_min / 10,
-        depature_min % 10, arrive_hour / 10, arrive_hour % 10, arrive_min / 10,
-        arrive_min % 10);
-  return 0;
+    if (depature_hour > 12 && arrive_hour > 12)
+        printf(
+            "Close departure time is %1d%1d:%1d%1d p.m., arriving at "
+            "%1d%1d:%1d%1d "
+            "p.m.\n",
+            (depature_hour - 12) / 10, (depature_hour - 12) % 10,
+            depature_min / 10, depature_min % 10, (arrive_hour - 12) / 10,
+            (arrive_hour - 12) % 10, arrive_min / 10, arrive_min % 10);
+    if (depature_hour <= 12 && arrive_hour > 12)
+        printf(
+            "Close departure time is %1d%1d:%1d%1d a.m., arriving at "
+            "%1d%1d:%1d%1d p.m.\n",
+            depature_hour / 10, depature_hour % 10, depature_min / 10,
+            depature_min % 10, (arrive_hour - 12) / 10, (arrive_hour - 12) % 10,
+            arrive_min / 10, arrive_min % 10);
+    if (depature_hour <= 12 && arrive_hour <= 12)
+        printf(
+            "Close departure time is %1d%1d:%1d%1d a.m., arriving at "
+            "%1d%1d:%1d%1d a.m.\n",
+            depature_hour / 10, depature_hour % 10, depature_min / 10,
+            depature_min % 10, arrive_hour / 10, arrive_hour % 10,
+            arrive_min / 10, arrive_min % 10);
+    return 0;
 }

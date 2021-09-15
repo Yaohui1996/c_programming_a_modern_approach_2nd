@@ -9,51 +9,51 @@
 void selection_sort(int[], size_t);
 
 int main() {
-  unsigned int n;
-  printf("请输入整数个数: ");
-  scanf("%u", &n);
-  int arr[n];
-  printf("请依次输入%u个整数:\n", n);
-  for (size_t i = 0; i != n; ++i) {
-    scanf("%d", &arr[i]);
-  }
+    unsigned int n;
+    printf("请输入整数个数: ");
+    scanf("%u", &n);
+    int arr[n];
+    printf("请依次输入%u个整数:\n", n);
+    for (size_t i = 0; i != n; ++i) {
+        scanf("%d", &arr[i]);
+    }
 
-  // 排序前
-  for (size_t i = 0; i != n; ++i) {
-    printf("%d ", arr[i]);
-  }
-  printf("\n");
-  printf("start!\n");
+    // 排序前
+    for (size_t i = 0; i != n; ++i) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    printf("start!\n");
 
-  selection_sort(arr, n);
+    selection_sort(arr, n);
 
-  // 排序后
-  for (size_t i = 0; i != n; ++i) {
-    printf("%d ", arr[i]);
-  }
-  printf("\n");
+    // 排序后
+    for (size_t i = 0; i != n; ++i) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
 
-  return 0;
+    return 0;
 }
 
 void selection_sort(int arr[], size_t n) {
-  int max_value = arr[0];
-  size_t max_index = 0;
+    int max_value = arr[0];
+    size_t max_index = 0;
 
-  // 寻找最大的元素
-  for (size_t i = 0; i != n; ++i) {
-    if (arr[i] > max_value) {
-      max_value = arr[i];
-      max_index = i;
+    // 寻找最大的元素
+    for (size_t i = 0; i != n; ++i) {
+        if (arr[i] > max_value) {
+            max_value = arr[i];
+            max_index = i;
+        }
     }
-  }
 
-  // 把最大的元素移动到数组末尾
-  for (size_t i = max_index; i != n - 1; ++i) {
-    arr[i] = arr[i + 1];
-  }
-  arr[n - 1] = max_value;
-  if (n - 1 > 1) {
-    selection_sort(arr, n - 1);
-  }
+    // 把最大的元素移动到数组末尾
+    for (size_t i = max_index; i != n - 1; ++i) {
+        arr[i] = arr[i + 1];
+    }
+    arr[n - 1] = max_value;
+    if (n - 1 > 1) {
+        selection_sort(arr, n - 1);
+    }
 }

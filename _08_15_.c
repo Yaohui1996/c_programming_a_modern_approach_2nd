@@ -20,32 +20,32 @@
 #include <stdio.h>
 
 int main() {
-  printf("Enter message to be encrypted: ");
-  char str[100];
-  char ch = getchar();
-  size_t i = 0;
-  while (ch != '\n') {
-    str[i] = ch;
-    ch = getchar();
-    ++i;
-  }
-  str[i] = '\n';
-
-  printf("Enter shift amount (1-25): ");
-  unsigned int n;
-  scanf("%u", &n);
-
-  for (size_t i = 0; i != 100; ++i) {
-    if (str[i] >= 65 && str[i] <= 90) {
-      str[i] = (char)(((str[i] - 'A') + n) % 26 + 'A');
-    } else if (str[i] >= 97 && str[i] <= 122) {
-      str[i] = (char)(((str[i] - 'a') + n) % 26 + 'a');
+    printf("Enter message to be encrypted: ");
+    char str[100];
+    char ch = getchar();
+    size_t i = 0;
+    while (ch != '\n') {
+        str[i] = ch;
+        ch = getchar();
+        ++i;
     }
-  }
-  printf("Encrypted message: ");
-  for (size_t i = 0; str[i] != '\n'; ++i) {
-    printf("%c", str[i]);
-  }
-  printf("\n");
-  return 0;
+    str[i] = '\n';
+
+    printf("Enter shift amount (1-25): ");
+    unsigned int n;
+    scanf("%u", &n);
+
+    for (size_t i = 0; i != 100; ++i) {
+        if (str[i] >= 65 && str[i] <= 90) {
+            str[i] = ((str[i] - 'A') + n) % 26 + 'A';
+        } else if (str[i] >= 97 && str[i] <= 122) {
+            str[i] = ((str[i] - 'a') + n) % 26 + 'a';
+        }
+    }
+    printf("Encrypted message: ");
+    for (size_t i = 0; str[i] != '\n'; ++i) {
+        printf("%c", str[i]);
+    }
+    printf("\n");
+    return 0;
 }

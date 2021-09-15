@@ -8,7 +8,7 @@
 #define PI 3.1415926535898
 
 int main() {
-  unsigned int r = 10;
-  printf("球体的体积为: %f\n", 4.0f / 3.0f * PI * r * r * r);
-  return 0;
+    unsigned int r = 10;
+    printf("球体的体积为: %f\n", 4.0f / 3.0f * PI * r * r * r);
+    return 0;
 }

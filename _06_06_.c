@@ -4,15 +4,15 @@
 #include <stdio.h>
 
 int main() {
-  int n;
-  printf("请输入一个数: ");
-  scanf("%d", &n);
-  int i = 1;
-  while (i * i <= n) {
-    if (i * i % 2 == 0) {
-      printf("%d\n", i * i);
+    int n;
+    printf("请输入一个数: ");
+    scanf("%d", &n);
+    int i = 1;
+    while (i * i <= n) {
+        if (i * i % 2 == 0) {
+            printf("%d\n", i * i);
+        }
+        ++i;
     }
-    ++i;
-  }
-  return 0;
+    return 0;
 }

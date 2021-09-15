@@ -3,21 +3,21 @@
 #include <stdio.h>
 
 int main() {
-  double e = 2, eps;
-  printf("请输入eps: ");
-  scanf("%lf", &eps);
-  double temp = 1;
-  unsigned i = 2;
+    double e = 2, eps;
+    printf("请输入eps: ");
+    scanf("%lf", &eps);
+    double temp = 1;
+    unsigned i = 2;
 
-  while (temp > eps) {
-    unsigned int factor = 1;
-    for (unsigned j = 1; j <= i; ++j) {
-      factor *= j;
+    while (temp > eps) {
+        unsigned int factor = 1;
+        for (unsigned j = 1; j <= i; ++j) {
+            factor *= j;
+        }
+        temp = 1.0 / (double)factor;
+        e += temp;
+        ++i;
     }
-    temp = 1.0 / (double)factor;
-    e += temp;
-    ++i;
-  }
-  printf("e: %f\n", e);
-  return 0;
+    printf("e: %f\n", e);
+    return 0;
 }

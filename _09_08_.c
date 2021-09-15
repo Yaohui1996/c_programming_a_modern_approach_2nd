@@ -46,74 +46,74 @@ int roll_dice(void);
 bool play_game(void);
 
 int main() {
-  char ch;
-  int win_nums = 0;
-  int lose_nums = 0;
-  if (play_game()) {
-    ++win_nums;
-    printf("You win!\n");
-    printf("Play again?\n");
-    ch = getchar();
-    getchar();
-  } else {
-    ++lose_nums;
-    printf("You lose!\n");
-    printf("Play again?\n");
-    ch = getchar();
-    getchar();
-  }
-  while (ch != 'n') {
+    char ch;
+    int win_nums = 0;
+    int lose_nums = 0;
     if (play_game()) {
-      ++win_nums;
-      printf("You win!\n");
-      printf("Play again?\n");
-      ch = getchar();
-      getchar();
+        ++win_nums;
+        printf("You win!\n");
+        printf("Play again?\n");
+        ch = getchar();
+        getchar();
     } else {
-      ++lose_nums;
-      printf("You lose!\n");
-      printf("Play again?\n");
-      ch = getchar();
-      getchar();
+        ++lose_nums;
+        printf("You lose!\n");
+        printf("Play again?\n");
+        ch = getchar();
+        getchar();
     }
-  }
-  printf("Wins: %d Losses: %d\n", win_nums, lose_nums);
-  return 0;
+    while (ch != 'n') {
+        if (play_game()) {
+            ++win_nums;
+            printf("You win!\n");
+            printf("Play again?\n");
+            ch = getchar();
+            getchar();
+        } else {
+            ++lose_nums;
+            printf("You lose!\n");
+            printf("Play again?\n");
+            ch = getchar();
+            getchar();
+        }
+    }
+    printf("Wins: %d Losses: %d\n", win_nums, lose_nums);
+    return 0;
 }
 
 int roll_dice(void) {
-  int num_1;
-  int num_2;
-  int sum;
-  srand((unsigned)clock());
-  // srand((unsigned)time(NULL));
-  num_1 = rand() % 6 + 1;
-  srand((unsigned)clock());
-  num_2 = rand() % 6 + 1;
-  sum = num_1 + num_2;
-  printf("You rolled: %d\n", sum);
-  return sum;
+    int num_1;
+    int num_2;
+    int sum;
+    srand((unsigned)clock());
+    // srand((unsigned)time(NULL));
+    num_1 = rand() % 6 + 1;
+    srand((unsigned)clock());
+    num_2 = rand() % 6 + 1;
+    sum = num_1 + num_2;
+    printf("You rolled: %d\n", sum);
+    return sum;
 }
 bool play_game(void) {
-  // 第一次
-  int target;
-  int sum = roll_dice();
-  if (sum == 7 || sum == 11) {
-    return true;
-  } else if (sum == 2 || sum == 3 || sum == 12) {
-    return false;
-  } else {
-    target = sum;
-  }
-  //之后
-  sum = roll_dice();
-
-  while (sum != target) {
-    if (sum == 7) {
-      return false;
+    // 第一次
+    int target;
+    int sum = roll_dice();
+    if (sum == 7 || sum == 11) {
+        return true;
+    } else if (sum == 2 || sum == 3 || sum == 12) {
+        return false;
     } else {
-      sum = roll_dice();
+        target = sum;
     }
-  }
-  return true;
+    //之后
+    sum = roll_dice();
+
+    while (sum != target) {
+        if (sum == 7) {
+            return false;
+        } else {
+            sum = roll_dice();
+        }
+    }
+    return true;
 }

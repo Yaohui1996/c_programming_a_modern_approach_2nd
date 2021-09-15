@@ -6,18 +6,18 @@
 #include <stdio.h>
 
 int main() {
-  float input;
-  float ret = 0;
-  printf("Enter a number: ");
-  scanf("%f", &input);
-  while (input > 0) {
-    if (input > ret) {
-      ret = input;
-    }
+    float input;
+    float ret = 0;
     printf("Enter a number: ");
     scanf("%f", &input);
-  }
-  printf("The largest number entered was: %.2f\n", ret);
+    while (input > 0) {
+        if (input > ret) {
+            ret = input;
+        }
+        printf("Enter a number: ");
+        scanf("%f", &input);
+    }
+    printf("The largest number entered was: %.2f\n", ret);
 
-  return 0;
+    return 0;
 }

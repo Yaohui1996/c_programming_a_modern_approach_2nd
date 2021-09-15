@@ -7,19 +7,19 @@
 #include <stdio.h>
 
 int main() {
-  unsigned int x;
-  printf("Enter a number x (x>=0):");
-  scanf("%u", &x);
-  unsigned int digits;
-  if (x <= 9) {
-    digits = 1;
-  } else if (x >= 10 && x <= 99) {
-    digits = 2;
-  } else if (x >= 100 && x <= 999) {
-    digits = 3;
-  } else {
-    digits = 4;
-  }
-  printf("The number %u has %u digits\n", x, digits);
-  return 0;
+    unsigned int x;
+    printf("Enter a number x (x>=0):");
+    scanf("%u", &x);
+    unsigned int digits;
+    if (x <= 9) {
+        digits = 1;
+    } else if (x >= 10 && x <= 99) {
+        digits = 2;
+    } else if (x >= 100 && x <= 999) {
+        digits = 3;
+    } else {
+        digits = 4;
+    }
+    printf("The number %u has %u digits\n", x, digits);
+    return 0;
 }

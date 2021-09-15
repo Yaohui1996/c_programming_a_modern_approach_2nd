@@ -8,22 +8,22 @@ int duoxiangshi(int x);
 int yh_pow(int x, int n);
 
 int main() {
-  int x;
-  printf("请输入x的值: ");
-  scanf("%d", &x);
-  printf("%d\n", duoxiangshi(x));
-  return 0;
+    int x;
+    printf("请输入x的值: ");
+    scanf("%d", &x);
+    printf("%d\n", duoxiangshi(x));
+    return 0;
 }
 
 int yh_pow(int x, int n) {
-  int result = 1;
-  for (int i = 0; i != n; ++i) {
-    result *= x;
-  }
-  return result;
+    int result = 1;
+    for (int i = 0; i != n; ++i) {
+        result *= x;
+    }
+    return result;
 }
 
 int duoxiangshi(int x) {
-  return 3 * yh_pow(x, 5) + 2 * yh_pow(x, 4) - 5 * yh_pow(x, 3) - yh_pow(x, 2) +
-         7 * yh_pow(x, 1) - 6;
+    return 3 * yh_pow(x, 5) + 2 * yh_pow(x, 4) - 5 * yh_pow(x, 3) -
+           yh_pow(x, 2) + 7 * yh_pow(x, 1) - 6;
 }

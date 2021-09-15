@@ -3,9 +3,8 @@ cmake_minimum_required(VERSION 3.5)
 project(c-programming-a-modern-approach-2nd)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-set(CMAKE_BUILD_TYPE Debug)
-set(CMAKE_C_FLAGS "-Wall -Wextra -pedantic -O0 -std=c99")
-# set(CMAKE_C_FLAGS "-Wall -Wextra -pedantic -O2 -std=c99")
+set(CMAKE_C_FLAGS_DEBUG "-g -O0 -std=c99")
+set(CMAKE_C_FLAGS_RELEASE "-Wall -Wextra -pedantic -O3 -std=c99")
 
 add_executable(_02_01_ _02_01_.c)
 add_executable(_02_02_ _02_02_.c)

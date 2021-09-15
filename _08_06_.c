@@ -12,32 +12,32 @@
 #include <stdio.h>
 
 int main() {
-  printf("Enter message: ");
-  printf("In B1FF-speak: ");
-  char ch;
-  ch = getchar();
-  ch = toupper(ch);
-
-  while (ch != '\n') {
-    if (ch == 'A') {
-      printf("4");
-    } else if (ch == 'B') {
-      printf("8");
-    } else if (ch == 'E') {
-      printf("3");
-    } else if (ch == 'I') {
-      printf("1");
-    } else if (ch == 'O') {
-      printf("0");
-    } else if (ch == 'S') {
-      printf("5");
-    } else {
-      printf("%c", ch);
-    }
+    printf("Enter message: ");
+    printf("In B1FF-speak: ");
+    char ch;
     ch = getchar();
-
     ch = toupper(ch);
-  }
-  printf("!!!!!!!!!!\n");
-  return 0;
+
+    while (ch != '\n') {
+        if (ch == 'A') {
+            printf("4");
+        } else if (ch == 'B') {
+            printf("8");
+        } else if (ch == 'E') {
+            printf("3");
+        } else if (ch == 'I') {
+            printf("1");
+        } else if (ch == 'O') {
+            printf("0");
+        } else if (ch == 'S') {
+            printf("5");
+        } else {
+            printf("%c", ch);
+        }
+        ch = getchar();
+
+        ch = toupper(ch);
+    }
+    printf("!!!!!!!!!!\n");
+    return 0;
 }

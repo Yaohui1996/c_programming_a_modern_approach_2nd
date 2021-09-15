@@ -7,28 +7,28 @@
 #include <stdio.h>
 
 int main() {
-  printf("Enter a first and last name: ");
-  char ch_f;
-  ch_f = getchar();
-  while (ch_f == ' ') {
+    printf("Enter a first and last name: ");
+    char ch_f;
     ch_f = getchar();
-  }
+    while (ch_f == ' ') {
+        ch_f = getchar();
+    }
 
-  char ch_l;
-  ch_l = getchar();
-  while (ch_l != ' ') {
+    char ch_l;
     ch_l = getchar();
-  }
+    while (ch_l != ' ') {
+        ch_l = getchar();
+    }
 
-  while (ch_l == ' ') {
-    ch_l = getchar();
-  }
+    while (ch_l == ' ') {
+        ch_l = getchar();
+    }
 
-  while (ch_l != ' ' && ch_l != '\n') {
-    printf("%c", ch_l);
-    ch_l = getchar();
-  }
-  printf(", %c.\n", ch_f);
+    while (ch_l != ' ' && ch_l != '\n') {
+        printf("%c", ch_l);
+        ch_l = getchar();
+    }
+    printf(", %c.\n", ch_f);
 
-  return 0;
+    return 0;
 }

@@ -7,21 +7,21 @@
 
 #include <stdio.h>
 int main(void) {
-  int i, n;
-  printf("This program prints a table of squares.\n");
-  printf("Enter number of entries in table: ");
-  scanf("%d", &n);
+    int i, n;
+    printf("This program prints a table of squares.\n");
+    printf("Enter number of entries in table: ");
+    scanf("%d", &n);
 
-  unsigned int times = 1;
-  for (i = 1; i <= n; i++) {
-    printf("%10d%10d\n", i, i * i);
-    if (times % 24 == 0) {
-      printf("Press Enter to continue...\n");
-      while (getchar() != '\n') {
-        printf("Press Enter to continue...\n");
-      }
+    unsigned int times = 1;
+    for (i = 1; i <= n; i++) {
+        printf("%10d%10d\n", i, i * i);
+        if (times % 24 == 0) {
+            printf("Press Enter to continue...\n");
+            while (getchar() != '\n') {
+                printf("Press Enter to continue...\n");
+            }
+        }
+        ++times;
     }
-    ++times;
-  }
-  return 0;
+    return 0;
 }

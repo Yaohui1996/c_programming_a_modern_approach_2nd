@@ -9,9 +9,9 @@
 #define PI 3.1415926535898
 
 int main() {
-  unsigned int r;
-  printf("请输入球体的半径r: ");
-  scanf("%u", &r);
-  printf("球体的体积为: %f\n", 4.0f / 3.0f * PI * r * r * r);
-  return 0;
+    unsigned int r;
+    printf("请输入球体的半径r: ");
+    scanf("%u", &r);
+    printf("球体的体积为: %f\n", 4.0f / 3.0f * PI * r * r * r);
+    return 0;
 }
