@@ -176,9 +176,6 @@ void analyze_hand(void) {
 
     /* check for straight */
     // 顺子
-    four = false;
-    three = false;
-    pairs = 0;
     straight = true;
     for (int i = 0; i != NUM_CARDS - 1; ++i) {
         if (hand[i][RANK] + 1 != hand[i + 1][RANK]) {
@@ -187,6 +184,9 @@ void analyze_hand(void) {
         }
     }
     /* check for 4-of-a-kind, 3-of-a-kind, and pairs */
+    four = false;
+    three = false;
+    pairs = 0;
     int card = 0;
     while (card < NUM_CARDS) {
         int rank = hand[card][RANK];

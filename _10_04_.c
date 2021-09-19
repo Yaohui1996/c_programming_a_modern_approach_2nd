@@ -1,19 +1,21 @@
 //  修改10.5节的poker.c程序，使其能识别牌的另一种类别——“同花大顺”（同花色的A、K、Q、J
 //  和10）。 同花大顺的级别高于其他所有的类别。
-// TODO
 
 /* Classifies a poker hand */
 #include <stdbool.h> /* C99 only */
 #include <stdio.h>
 #include <stdlib.h>
-#define NUM_RANKS 13
-#define NUM_SUITS 4
+#define RANK 0
+#define SUIT 1
 #define NUM_CARDS 5
 /* external variables */
-int num_in_rank[NUM_RANKS];
-int num_in_suit[NUM_SUITS];
-bool straight, flush, four, three;
+int hand[NUM_CARDS][2];
 int pairs; /* can be 0, 1, or 2 */
+bool four;
+bool three;
+bool straight;
+bool flush;
+bool new_rank_suit_type;
 /* prototypes */
 void read_cards(void);
 void analyze_hand(void);
@@ -35,17 +37,11 @@ int main(void) {
  * checks for bad cards and duplicate cards. *
  ***********************************************************/
 void read_cards(void) {
-    bool card_exists[NUM_RANKS][NUM_SUITS];
+    // bool card_exists[NUM_RANKS][NUM_SUITS];
     char ch, rank_ch, suit_ch;
     int rank, suit;
     bool bad_card;
     int cards_read = 0;
-    for (rank = 0; rank < NUM_RANKS; rank++) {
-        num_in_rank[rank] = 0;
-        for (suit = 0; suit < NUM_SUITS; suit++)
-            card_exists[rank][suit] = false;
-    }
-    for (suit = 0; suit < NUM_SUITS; suit++) num_in_suit[suit] = 0;
     while (cards_read < NUM_CARDS) {
         bad_card = false;
         printf("Enter a card: ");
@@ -123,15 +119,20 @@ void read_cards(void) {
         }
         while ((ch = getchar()) != '\n')
             if (ch != ' ') bad_card = true;
-        if (bad_card)
-            printf("Bad card; ignored.\n");
-        else if (card_exists[rank][suit])
-            printf("Duplicate card; ignored.\n");
-        else {
-            num_in_rank[rank]++;
-            num_in_suit[suit]++;
-            card_exists[rank][suit] = true;
-            cards_read++;
+        if (bad_card) printf("Bad card; ignored.\n");
+
+        bool card_exist = false;
+        for (int i = 0; i != cards_read; ++i) {
+            if (hand[i][RANK] == rank && hand[i][SUIT] == suit) {
+                printf("Duplicate card; ignored.\n");
+                card_exist = true;
+                break;
+            }
+        }
+        if (!card_exist) {
+            hand[cards_read][RANK] = rank;
+            hand[cards_read][SUIT] = suit;
+            ++cards_read;
         }
     }
 }
@@ -144,29 +145,79 @@ void read_cards(void) {
  * four, three, and pairs. *
  ************************************************************/
 void analyze_hand(void) {
-    int num_consec = 0;
-    int rank, suit;
-    straight = false;
-    flush = false;
+    // 先根据rank排序
+    for (int i = 0; i != NUM_CARDS - 1; ++i) {
+        // 找到最小的index
+        int min_i = i;
+        for (int j = i + 1; j != NUM_CARDS; ++j) {
+            if (hand[j][RANK] < hand[min_i][RANK]) {
+                min_i = j;
+            }
+        }
+        // 交换
+        int temp_rank = hand[i][RANK];
+        int temp_suit = hand[i][SUIT];
+        hand[i][RANK] = hand[min_i][RANK];
+        hand[i][SUIT] = hand[min_i][SUIT];
+        hand[min_i][RANK] = temp_rank;
+        hand[min_i][SUIT] = temp_suit;
+    }
+
+    /* check for flush */
+    // 同花色
+    bool flush = true;
+    int suit = hand[0][SUIT];
+    for (int i = 1; i != NUM_CARDS; ++i) {
+        if (hand[i][SUIT] != suit) {
+            flush = false;
+            break;
+        }
+    }
+
+    /* check for straight */
+    // 顺子
+    straight = true;
+    for (int i = 0; i != NUM_CARDS - 1; ++i) {
+        if (hand[i][RANK] + 1 != hand[i + 1][RANK]) {
+            straight = false;
+            break;
+        }
+    }
+    // 同花大顺
+    new_rank_suit_type = false;
+    if (flush && straight) {
+        new_rank_suit_type = true;
+        int check_a[NUM_CARDS] = {8, 9, 10, 11, 12};
+        for (int i = 0; i != NUM_CARDS; ++i) {
+            if (hand[i][RANK] != check_a[i]) {
+                new_rank_suit_type = false;
+                break;
+            }
+        }
+    }
+    /* check for 4-of-a-kind, 3-of-a-kind, and pairs */
     four = false;
     three = false;
     pairs = 0;
-    /* check for flush */
-    for (suit = 0; suit < NUM_SUITS; suit++)
-        if (num_in_suit[suit] == NUM_CARDS) flush = true;
-    /* check for straight */
-    rank = 0;
-    while (num_in_rank[rank] == 0) rank++;
-    for (; rank < NUM_RANKS && num_in_rank[rank] > 0; rank++) num_consec++;
-    if (num_consec == NUM_CARDS) {
-        straight = true;
-        return;
-    }
-    /* check for 4-of-a-kind, 3-of-a-kind, and pairs */
-    for (rank = 0; rank < NUM_RANKS; rank++) {
-        if (num_in_rank[rank] == 4) four = true;
-        if (num_in_rank[rank] == 3) three = true;
-        if (num_in_rank[rank] == 2) pairs++;
+    int card = 0;
+    while (card < NUM_CARDS) {
+        int rank = hand[card][RANK];
+        int run = 0;
+        do {
+            ++run;
+            ++card;
+        } while (card < NUM_CARDS && hand[card][RANK] == rank);
+        switch (run) {
+            case 2:
+                ++pairs;
+                break;
+            case 3:
+                three = true;
+                break;
+            case 4:
+                four = true;
+                break;
+        }
     }
 }
 /************************************************************
@@ -176,7 +227,9 @@ void analyze_hand(void) {
  * and pairs. *
  ***********************************************************/
 void print_result(void) {
-    if (straight && flush)
+    if (new_rank_suit_type)
+        printf("同花大顺");
+    else if (straight && flush)
         printf("Straight flush");
     else if (four)
         printf("Four of a kind");
