@@ -1,3 +1,5 @@
+// 修改第8章的编程题14，用指针而不是整数来跟踪包含该语句的数组的当前位置。
+
 // 编写程序颠倒句子中单词的顺序：
 // Enter a sentence: you can cage a swallow can't you?
 // Reversal of sentence: you can't swallow a cage can you?
@@ -12,32 +14,32 @@
 int main() {
     printf("Enter a sentence: ");
     char char_arr[100];
-    int i = 0;
+    char* p = &char_arr[0];
     char ch;
     ch = getchar();
     while (ch != '.' && ch != '?' && ch != '!') {
-        char_arr[i] = ch;
+        *p = ch;
         ch = getchar();
-        ++i;
+        ++p;
     }
     // 保存终止字符
     char end_symbol = ch;
 
     // 反向输出
-    while (i >= 0) {
-        int end_i = i;
-        int start_i = 0;
-        while (char_arr[i] != ' ' && i >= 0) {
-            --i;
+    while (p >= &char_arr[0]) {
+        char* end_p = p;
+        char* start_p = &char_arr[0];
+        while (*p != ' ' && p >= &char_arr[0]) {
+            --p;
         }
-        start_i = i + 1;
-        for (int j = start_i; j <= end_i; ++j) {
-            printf("%c", char_arr[j]);
+        start_p = p + 1;
+        for (char* j = start_p; j <= end_p; ++j) {
+            printf("%c", *j);
         }
-        if (i > 0) {
+        if (p > &char_arr[0]) {
             printf(" ");
         }
-        --i;
+        --p;
     }
     printf("%c\n", end_symbol);
     return 0;
