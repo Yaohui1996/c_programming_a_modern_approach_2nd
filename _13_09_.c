@@ -9,6 +9,7 @@
 #include <ctype.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <string.h>
 
 int compute_vowel_count(const char *sentence);
 
