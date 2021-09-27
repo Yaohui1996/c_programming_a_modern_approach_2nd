@@ -142,3 +142,43 @@ add_executable(_13_15_ _13_15_.c)
 add_executable(_13_16_ _13_16_.c)
 add_executable(_13_17_ _13_17_.c)
 add_executable(_13_18_ _13_18_.c)
+
+add_executable(
+    _15_01_
+    chapter-15-01/justify.c
+    chapter-15-01/line.c
+    chapter-15-01/word.c
+    chapter-15-01/line.h
+    chapter-15-01/word.h
+)
+
+add_executable(
+    _15_02_
+    chapter-15-02/justify.c
+    chapter-15-02/line.c
+    chapter-15-02/word.c
+    chapter-15-02/line.h
+    chapter-15-02/word.h
+)
+
+add_executable(
+    _15_03_
+    chapter-15-03/qsort.c
+    chapter-15-03/quicksort.c
+    chapter-15-03/quicksort.h
+)
+
+add_executable(
+    _15_04_
+    chapter-15-04/remind.c
+    chapter-15-04/readline.c
+    chapter-15-04/readline.h
+)
+
+add_executable(
+    _15_05_
+    chapter-15-05/_15_05_.c
+    chapter-15-05/stack.c
+    chapter-15-05/stack.h
+)
+
