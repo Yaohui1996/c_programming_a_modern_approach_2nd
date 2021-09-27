@@ -182,3 +182,28 @@ add_executable(
     chapter-15-05/stack.h
 )
 
+add_executable(_16_01_ _16_01_.c)
+
+add_executable(
+    _16_02_
+    chapter-16-02/inventory.c
+    chapter-16-02/readline.c
+    chapter-16-02/readline.h
+)
+
+add_executable(
+    _16_03_
+    chapter-16-03/inventory.c
+    chapter-16-03/readline.c
+    chapter-16-03/readline.h
+)
+
+add_executable(
+    _16_04_
+    chapter-16-04/inventory.c
+    chapter-16-04/readline.c
+    chapter-16-04/readline.h
+)
+
+add_executable(_16_05_ _16_05_.c)
+add_executable(_16_06_ _16_06_.c)
