@@ -207,3 +207,33 @@ add_executable(
 
 add_executable(_16_05_ _16_05_.c)
 add_executable(_16_06_ _16_06_.c)
+
+add_executable(
+    _17_01_
+    chapter-17-01/inventory.c
+    chapter-17-01/readline.c
+    chapter-17-01/readline.h
+)
+
+add_executable(
+    _17_02_
+    chapter-17-02/inventory.c
+    chapter-17-02/readline.c
+    chapter-17-02/readline.h
+)
+
+add_executable(
+    _17_03_
+    chapter-17-03/inventory2.c
+    chapter-17-03/readline.c
+    chapter-17-03/readline.h
+)
+
+add_executable(
+    _17_04_
+    chapter-17-04/justify.c
+    chapter-17-04/line.c
+    chapter-17-04/word.c
+    chapter-17-04/line.h
+    chapter-17-04/word.h
+)
