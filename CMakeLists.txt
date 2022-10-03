@@ -3,8 +3,11 @@ cmake_minimum_required(VERSION 3.5)
 project(c-programming-a-modern-approach-2nd)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-set(CMAKE_C_FLAGS_DEBUG "-g -O0 -std=c99")
-set(CMAKE_C_FLAGS_RELEASE "-Wall -Wextra -pedantic -O3 -std=c99")
+set(CMAKE_C_STANDARD_REQUIRED True)
+set(CMAKE_C_STANDARD 99)
+
+#set(CMAKE_C_FLAGS_DEBUG "-g -O0 -std=c99")
+#set(CMAKE_C_FLAGS_RELEASE "-Wall -Wextra -pedantic -O3 -std=c99")
 
 add_executable(_02_01_ _02_01_.c)
 add_executable(_02_02_ _02_02_.c)
@@ -148,39 +151,45 @@ add_executable(
     chapter-15-01/justify.c
     chapter-15-01/line.c
     chapter-15-01/word.c
-    chapter-15-01/line.h
-    chapter-15-01/word.h
+#    chapter-15-01/line.h
+#    chapter-15-01/word.h
 )
+target_include_directories(_15_01_ PRIVATE /chapter-15-01/)
 
 add_executable(
     _15_02_
     chapter-15-02/justify.c
     chapter-15-02/line.c
     chapter-15-02/word.c
-    chapter-15-02/line.h
-    chapter-15-02/word.h
+#    chapter-15-02/line.h
+#    chapter-15-02/word.h
 )
+target_include_directories(_15_02_ PRIVATE /chapter-15-02/)
+
 
 add_executable(
     _15_03_
     chapter-15-03/qsort.c
     chapter-15-03/quicksort.c
-    chapter-15-03/quicksort.h
+#    chapter-15-03/quicksort.h
 )
+target_include_directories(_15_03_ PRIVATE /chapter-15-03/)
 
 add_executable(
     _15_04_
     chapter-15-04/remind.c
     chapter-15-04/readline.c
-    chapter-15-04/readline.h
+#    chapter-15-04/readline.h
 )
+target_include_directories(_15_04_ PRIVATE /chapter-15-04/)
 
 add_executable(
     _15_05_
     chapter-15-05/_15_05_.c
     chapter-15-05/stack.c
-    chapter-15-05/stack.h
+#    chapter-15-05/stack.h
 )
+target_include_directories(_15_05_ PRIVATE /chapter-15-05/)
 
 add_executable(_16_01_ _16_01_.c)
 
@@ -188,22 +197,25 @@ add_executable(
     _16_02_
     chapter-16-02/inventory.c
     chapter-16-02/readline.c
-    chapter-16-02/readline.h
+#    chapter-16-02/readline.h
 )
+target_include_directories(_16_02_ PRIVATE /chapter-16-02/)
 
 add_executable(
     _16_03_
     chapter-16-03/inventory.c
     chapter-16-03/readline.c
-    chapter-16-03/readline.h
+#    chapter-16-03/readline.h
 )
+target_include_directories(_16_03_ PRIVATE /chapter-16-03/)
 
 add_executable(
     _16_04_
     chapter-16-04/inventory.c
     chapter-16-04/readline.c
-    chapter-16-04/readline.h
+#    chapter-16-04/readline.h
 )
+target_include_directories(_16_04_ PRIVATE /chapter-16-04/)
 
 add_executable(_16_05_ _16_05_.c)
 add_executable(_16_06_ _16_06_.c)
@@ -212,28 +224,35 @@ add_executable(
     _17_01_
     chapter-17-01/inventory.c
     chapter-17-01/readline.c
-    chapter-17-01/readline.h
+#    chapter-17-01/readline.h
 )
+target_include_directories(_17_01_ PRIVATE /chapter-17-01/)
 
 add_executable(
     _17_02_
     chapter-17-02/inventory.c
     chapter-17-02/readline.c
-    chapter-17-02/readline.h
+#    chapter-17-02/readline.h
 )
+target_include_directories(_17_02_ PRIVATE /chapter-17-02/)
+
 
 add_executable(
     _17_03_
     chapter-17-03/inventory2.c
     chapter-17-03/readline.c
-    chapter-17-03/readline.h
+#    chapter-17-03/readline.h
 )
+target_include_directories(_17_03_ PRIVATE /chapter-17-03/)
+
 
 add_executable(
     _17_04_
     chapter-17-04/justify.c
     chapter-17-04/line.c
     chapter-17-04/word.c
-    chapter-17-04/line.h
-    chapter-17-04/word.h
+#    chapter-17-04/line.h
+#    chapter-17-04/word.h
 )
+target_include_directories(_17_04_ PRIVATE /chapter-17-04/)
+

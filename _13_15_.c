@@ -47,10 +47,11 @@ void push(int i) {
         contents[top++] = i;
 }
 int pop(void) {
-    if (is_empty())
-        stack_underflow();
-    else
+    if (!is_empty()) {
         return contents[--top];
+    }
+    stack_underflow();
+    return -1;
 }
 void print_stack() {
     for (int i = 0; i != STACK_SIZE; ++i) {
